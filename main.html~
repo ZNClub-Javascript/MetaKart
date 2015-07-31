@@ -12,24 +12,27 @@
     }
     
     #navbar{
-    	background-color:#ffffff
+    	background-color:#000000;
+    	padding:5px;
+    }
+    
+    #main{
+    	margin-top: 5px;
     }
 
 </style>
 <body>
-<div class="ui grey secondary inverted menu">
+<div class="ui secondary inverted menu" id="navbar">
     <a class="active item">Home</a>
     <a class="item">My Cart</a>
     <a class="item">Leafy Veggies</a>
     <a class="item">Non-Leafy Veggies</a>
+    <a class="item">Farmer's Hub</a>
 
     <div class="right menu">
-        <a class="ui inverted white button">log in</a>
+        <div class="item"><a class="ui inverted white button">log in</a></div>
     </div>
-</div><!--
-<div class="ui segment">
-    <p></p>
-</div>-->
+</div>
 <div id="main" class="ui grid container">
     <div class="ui cards">
         <div class="ui card">
