@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Emandi.iml" filepath="$PROJECT_DIR$/.idea/Emandi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e-mandi.iml" filepath="$PROJECT_DIR$/e-mandi.iml" />
     </modules>
   </component>
 </project>
