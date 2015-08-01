@@ -15,11 +15,11 @@
     }
 
     #main{
-        margin-top: 10px;
+        margin-top: 20px;
     }
 </style>
 <body>
-<div class="ui secondary inverted menu" style="background-color: #3F51B5; padding: 5px">
+<div class="ui fixed sticky secondary inverted menu" style="background-color: #3F51B5; padding: 5px">
     <a class="active item">Home</a>
     <a class="item">My Cart</a>
     <a class="item">Leafy Veggies</a>
