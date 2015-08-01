@@ -57,7 +57,7 @@
                     <span class="date">In Stock</span>
                 </div>
                 <div class="description">
-                    Tomatoes are red jucy and delicious.
+                    Tomatoes are red juicy and delicious.
                 </div>
             </div>
             <div class="extra content">
