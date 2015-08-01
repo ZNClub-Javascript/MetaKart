@@ -7,14 +7,15 @@
 </head>
 <style>
     body {
-       background: linear-gradient(to bottom, rgba(34,34,34,1), rgba(255,255,255,0) 10%) no-repeat, url("img/vegetables_herbs_lots_of_hd-wallpaper-75390.jpg") center no-repeat fixed;
         background-size: cover;
+        background: #212121 linear-gradient(to bottom, rgba(34, 34, 34, 1), rgba(255, 255, 255, 0) 10%) no-repeat;
     }
-    .indigo{
+
+    .indigo {
         background-color: #3F51B5;
     }
 
-    #main{
+    #main {
         margin-top: 20px;
     }
 </style>
