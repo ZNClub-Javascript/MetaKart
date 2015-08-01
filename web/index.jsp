@@ -7,23 +7,27 @@
 </head>
 <style>
     body {
-        background: linear-gradient(to bottom, rgba(34,34,34,1), rgba(255,255,255,0) 10%) no-repeat, url("img/vegetables_herbs_lots_of_hd-wallpaper-75390.jpg") center no-repeat fixed;
+       background: linear-gradient(to bottom, rgba(34,34,34,1), rgba(255,255,255,0) 10%) no-repeat, url("img/vegetables_herbs_lots_of_hd-wallpaper-75390.jpg") center no-repeat fixed;
         background-size: cover;
+    }
+    .indigo{
+        background-color: #3F51B5;
+    }
+
+    #main{
+        margin-top: 10px;
     }
 </style>
 <body>
-<div class="ui secondary inverted pointing menu">
+<div class="ui secondary inverted menu" style="background-color: #3F51B5; padding: 5px">
     <a class="active item">Home</a>
     <a class="item">My Cart</a>
     <a class="item">Leafy Veggies</a>
     <a class="item">Non-Leafy Veggies</a>
 
     <div class="right menu">
-        <a class="ui inverted green button">log in</a>
+        <a class="ui inverted white button">log in</a>
     </div>
-</div>
-<div class="ui segment">
-    <p></p>
 </div>
 <div id="main" class="ui grid container">
     <div class="ui cards">
