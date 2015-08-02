@@ -4,12 +4,11 @@
     <title>FarmFresh</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="semantic-ui/semantic.css">
-    <script src="semantic-ui/semantic.min.js"></script>
 </head>
 <style>
     body {
         background-size: cover;
-        background: #212121 linear-gradient(to bottom, rgba(34, 34, 34, 1), rgba(255, 255, 255, 0) 10%) no-repeat;
+        background: #8BC34A linear-gradient(to bottom, rgba(34, 34, 34, 1), rgba(255, 255, 255, 0) 10%) no-repeat;
     }
 
     .indigo {
@@ -22,6 +21,10 @@
 
 </style>
 <body>
+
+<script src="jquery.js"></script>
+<script src="semantic-ui/semantic.min.js"></script>
+
 <%@ include file="navbar.jsp"%>
 <div id="main" class="ui grid container">
     <div class="ui cards">
@@ -153,6 +156,7 @@
         </div>
     </div>
 </div>
+
 <%@include file="footer.jsp"%>
 </body>
 </html>
