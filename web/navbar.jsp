@@ -30,7 +30,7 @@
                     <label>Password</label>
 
                     <div class="ui input">
-                        <input type="text" name="password" placeholder="Password">
+                        <input type="password" name="password" placeholder="Password">
                     </div>
                 </div>
                 <div class="ui bottom attached button" tabindex="0" style="background: #9CCC65">Log-in/Sign Up</div>
