@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="semantic-ui/semantic.css">
 </head>
 <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
+
     body {
         background-size: cover;
         background: #8BC34A linear-gradient(to bottom, rgba(34, 34, 34, 1), rgba(255, 255, 255, 0) 10%) no-repeat;
@@ -19,6 +21,26 @@
         margin-top: 20px;
     }
 
+    .offer {
+        position: relative;
+        top: 0;
+        background: url(img/vegetables.jpg) fixed no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+    .offer .content {
+        width: 75%;
+        position: absolute;
+        top: 25%;
+        right: 0;
+        font-family: 'Roboto Slab',serif;
+        font-weight: 700;
+        color: rgba(255,255,255,0.7);
+        font-size: 74pt;
+        line-height: 20vh
+        text-align: right;
+    }
+
 </style>
 <body>
 
@@ -26,6 +48,11 @@
 <script src="semantic-ui/semantic.min.js"></script>
 
 <%@ include file="navbar.jsp"%>
+
+<div class="offer">
+    <div class="content">The best deals on the freshest vegetables are back!</div>
+</div>
+
 <div id="main" class="ui grid container">
     <div class="ui cards">
         <div class="ui card">

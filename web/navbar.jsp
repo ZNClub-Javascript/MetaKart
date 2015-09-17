@@ -8,7 +8,7 @@
         });
     })
 </script>
-<div class="ui fixed sticky secondary inverted menu" style="background-color: #7CB342; padding: 5px">
+<div class="ui fixed sticky secondary inverted menu" style="background-color: #7CB342; padding: 5px; height: 7%">
     <a class="active item">Home</a>
     <a class="item">My Cart</a>
     <a class="item">Leafy Veggies</a>
