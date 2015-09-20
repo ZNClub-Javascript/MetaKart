@@ -37,7 +37,7 @@
         font-weight: 700;
         color: rgba(255,255,255,0.7);
         font-size: 74pt;
-        line-height: 20vh
+        line-height: 20vh;
         text-align: right;
     }
 
