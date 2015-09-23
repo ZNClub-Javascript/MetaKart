@@ -18,7 +18,7 @@
         <a id="logIn" class="ui button" style="background: #9CCC65">log in</a>
 
         <div class="ui popup">
-            <form class="ui form">
+            <form class="ui form" method="post" action="/login">
                 <div class="field">
                     <label>Username</label>
 
