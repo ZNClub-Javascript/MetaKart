@@ -18,9 +18,11 @@ public class Login extends HttpServlet {
         user user = new user();
         user.setUser(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
+        System.out.println(user.getUser()+" "+user.getPassword());
         try {
             if(user.validate())
             {
+                System.out.println("Validated");
                 RequestDispatcher rs = request.getRequestDispatcher("welcome.jsp");
                 rs.forward(request,response);
             }
