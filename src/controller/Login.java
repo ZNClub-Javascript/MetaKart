@@ -26,6 +26,10 @@ public class Login extends HttpServlet {
                 RequestDispatcher rs = request.getRequestDispatcher("welcome.jsp");
                 rs.forward(request,response);
             }
+            else{
+                RequestDispatcher rs = request.getRequestDispatcher("/verify");
+                rs.forward(request,response);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

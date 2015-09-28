@@ -19,4 +19,12 @@
         <servlet-name>login</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>verification</servlet-name>
+        <servlet-class>controller.verification</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>verification</servlet-name>
+        <url-pattern>/verify</url-pattern>
+    </servlet-mapping>
 </web-app>
