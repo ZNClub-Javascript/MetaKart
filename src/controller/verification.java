@@ -21,20 +21,20 @@ public class verification extends HttpServlet {
         String from = "f.warren210@gmail.com";
 
         Properties props = new Properties();
-		props.put("mail.smtp.auth", "true");
-		props.put("mail.smtp.starttls.enable", "true");
-		props.put("mail.smtp.host", "smtp.gmail.com");
-		props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
 
-		Session session = Session.getInstance(props,
-		  new javax.mail.Authenticator() {
-			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("f.warren210@gmail.com", "motoxt720");
-			}
-		  });
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication("f.warren210@gmail.com", "motoxt720");
+                    }
+                });
 
 
-        try{
+        try {
             // Create a default MimeMessage object.
             MimeMessage message = new MimeMessage(session);
 
@@ -53,7 +53,7 @@ public class verification extends HttpServlet {
             // Send message
             Transport.send(message);
             System.out.println("Sent message successfully....");
-        }catch (MessagingException mex) {
+        } catch (MessagingException mex) {
             mex.printStackTrace();
         }
     }
