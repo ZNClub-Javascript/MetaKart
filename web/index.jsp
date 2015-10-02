@@ -51,10 +51,10 @@
             scroll = $(window).scrollTop();
                     $('.offer .content').css("transform", "translateY(" + scroll / 2 + "px)");
             });
-                    $('#main').visibility({
-                        onTopVisible: function(calculations) {
-                        window.scrollTo(0, $('#main').offset().top);    
-            }});
+                    //$('#main').visibility({
+                    //    onTopVisible: function(calculations) {
+                   //     window.scrollTo(0, $('#main').offset().top);
+           // }});
             });
         </script>
     </head>
