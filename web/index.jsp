@@ -52,6 +52,9 @@
                 scroll = $(window).scrollTop();
                 $('.offer .content').css("transform", "translateY(" + scroll / 2 + "px)");
             });
+            $('.ui.rating')
+                    .rating()
+            ;
             //$('#main').visibility({
             //    onTopVisible: function(calculations) {
             //     window.scrollTo(0, $('#main').offset().top);
@@ -78,9 +81,7 @@
                 <div class="meta">
                     <span class="date">Hoarded for you</span>
                 </div>
-                <div class="description">
-                    I love onions
-                </div>
+                <div class="ui mini star rating"  data-max-rating="5" data-rating="3"></div>
                 <div class="left floated meta">
                     Rs. 40/kg
                 </div>
