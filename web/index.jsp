@@ -84,7 +84,7 @@
                 <div class="left floated meta">
                     Rs. 40/kg
                 </div>
-                <div class="ui right floated basic button">
+                <div class="ui right floated basic blue button">
                     Buy
                 </div>
             </div>
