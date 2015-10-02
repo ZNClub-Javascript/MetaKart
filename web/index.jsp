@@ -67,7 +67,7 @@
 </div>
 
 <div id="main" class="ui grid container">
-    <div class="ui cards">
+    <div class="ui fluid cards">
         <div class="ui card">
             <div class="image">
                 <img src="img/onions.jpg">
