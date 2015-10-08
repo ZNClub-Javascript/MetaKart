@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="semantic-ui/semantic.css">
     <script src="jquery.js"></script>
     <script src="semantic-ui/semantic.min.js"></script>
+    <style>
+      .middle.center {
+        position: fixed;
+        top: 40%;
+        left: 40%;
+        width: 50%;
+      }
+    </style>
 </head>
 <body>
 <div class="ui middle aligned center aligned grid">
@@ -22,7 +30,7 @@
         Sign up for the freshest veggies!
       </div>
     </h2>
-    <form class="ui large form">
+    <form class="ui large form" method="post" action="/signUpController">
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
@@ -36,7 +44,7 @@
             <input type="password" name="password" placeholder="Password">
           </div>
         </div>
-        <div class="ui fluid large teal submit button">Login</div>
+        <input type="submit" class="ui fluid large teal submit button" value="sign up!"/>
       </div>
 
       <div class="ui error message"></div>

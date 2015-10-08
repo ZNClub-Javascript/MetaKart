@@ -21,10 +21,18 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>verification</servlet-name>
-        <servlet-class>controller.verification</servlet-class>
+        <servlet-class>controller.Vcode</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>verification</servlet-name>
         <url-pattern>/verify</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>signUp</servlet-name>
+        <servlet-class>controller.SignUpController</servlet-class> 
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>signUp</servlet-name>
+        <url-pattern>/signUpController</url-pattern>
     </servlet-mapping>
 </web-app>
