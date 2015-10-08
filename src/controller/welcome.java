@@ -14,10 +14,10 @@ import java.util.Arrays;
 public class welcome extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Cookie cookies[] = request.getCookies();
-        if(cookies[0].getValue().equals("true"))response.sendRedirect("index.jsp");
+        if (cookies[0].getValue().equals("true")) response.sendRedirect("index.jsp");
         else {
-            Cookie first = new Cookie("new","true");
-            first.setMaxAge(60*60*24*14);
+            Cookie first = new Cookie("new", "true");
+            first.setMaxAge(60 * 60 * 24 * 14);
             response.addCookie(first);
             response.sendRedirect("landing.jsp");
         }

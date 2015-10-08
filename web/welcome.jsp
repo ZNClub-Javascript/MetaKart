@@ -11,6 +11,6 @@
     <title>Welcome!</title>
 </head>
 <body>
-  <div class="ui modal"><h3>Welcome!</h3></div>
+<div class="ui modal"><h3>Welcome!</h3></div>
 </body>
 </html>
