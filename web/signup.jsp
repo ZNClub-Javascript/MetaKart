@@ -13,6 +13,9 @@
     <script src="jquery.js"></script>
     <script src="semantic-ui/semantic.min.js"></script>
     <style>
+      body{
+        background: url(img/vegetables.jpg) fixed no-repeat;
+      }
       .middle.center {
         position: fixed;
         top: 40%;
@@ -22,8 +25,8 @@
     </style>
 </head>
 <body>
-<div class="ui middle aligned center aligned grid">
-  <div class="column">
+<div class="ui center aligned grid">
+  <div class="four wide column">
     <h2 class="ui teal image header">
       <img src="img/story_carrots.png" class="image">
       <div class="content">

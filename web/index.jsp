@@ -66,7 +66,9 @@
 <%@ include file="navbar.jsp" %>
 
 <div class="offer">
+    <% for(int i=0; i<2;i++){ %>
     <div class="content">The best deals on the freshest vegetables are back!</div>
+    <%}%>
 </div>
 
 <div id="main" class="ui grid container">
