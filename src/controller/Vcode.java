@@ -1,7 +1,8 @@
 package controller;
 
+import model.user;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,11 +22,16 @@ public class Vcode extends HttpServlet {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM USERS WHERE VCODE = ?");
             statement.setInt(1,vcode);
             ResultSet resultSet = statement.executeQuery();
-            if(resultSet.next()){response.sendRedirect("index.jsp");}
+            if(resultSet.next()){
+                user user = new user();
+                user.setUser(resultSet.getString("USERNAME"));
+                request.getSession().setAttribute("user",user);
+            }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        response.sendRedirect("index.jsp");
     }
 }
