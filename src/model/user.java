@@ -32,7 +32,7 @@ public class user {
         ResultSet resultSet = statement.executeQuery();
         if (resultSet.next()) {
             System.out.println(resultSet.getString("PASSWORD"));
-            if (resultSet.getString("PASSWORD").equals(this.password))
+            if (resultSet.getString("PASSWORD").equals(this.password) && resultSet.getInt("VERIFIED")==1)
                 return true;
         }
         return false;

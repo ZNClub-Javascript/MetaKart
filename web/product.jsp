@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>${prduct.category}</title>
+    <title>${product.category}: ${product.name}</title>
     <link rel="stylesheet" href="semantic-ui/semantic.css">
 </head>
 <body>

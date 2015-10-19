@@ -23,6 +23,17 @@
         width: 50%;
       }
     </style>
+    <script>
+      $(function(){
+        $('.ui.form')
+                .form({
+                  fields: {
+                    username : 'email',
+                    password : ['minLength[6]', 'empty']
+                  }
+                });
+      });
+    </script>
 </head>
 <body>
 <div class="ui center aligned grid">
@@ -38,7 +49,7 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="email" placeholder="E-mail address">
+            <input type="email" name="email" placeholder="E-mail address">
           </div>
         </div>
         <div class="field">

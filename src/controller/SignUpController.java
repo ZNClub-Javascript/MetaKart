@@ -40,7 +40,7 @@ public class SignUpController extends HttpServlet {
             int vcode = random.nextInt();
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO USERS VALUES (?,?,?)");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO USERS VALUES (?,?,?,0)");
             statement.setString(1,request.getParameter("email"));
             statement.setString(2,request.getParameter("password"));
             statement.setInt(3,vcode);

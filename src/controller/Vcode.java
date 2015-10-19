@@ -23,9 +23,13 @@ public class Vcode extends HttpServlet {
             statement.setInt(1,vcode);
             ResultSet resultSet = statement.executeQuery();
             if(resultSet.next()){
-                user user = new user();
-                user.setUser(resultSet.getString("USERNAME"));
-                request.getSession().setAttribute("user",user);
+                statement = connection.prepareStatement("UPDATE USERS SET VERIFIED = 1 WHERE VCODE =?");
+                statement.setInt(1,vcode);
+                if(statement.execute()) {
+                    user user = new user();
+                    user.setUser(resultSet.getString("USERNAME"));
+                    request.getSession().setAttribute("user", user);
+                }
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
