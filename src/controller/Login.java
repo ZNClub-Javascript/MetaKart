@@ -1,6 +1,6 @@
 package controller;
 
-import model.user;
+import model.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        user user = new user();
+        User user = new User();
         user.setUser(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
         System.out.println(user.getUser()+" "+user.getPassword());
@@ -23,7 +23,8 @@ public class Login extends HttpServlet {
             if(user.validate())
             {
                 System.out.println("Validated");
-                RequestDispatcher rs = request.getRequestDispatcher("welcome.jsp");
+                request.getSession().setAttribute("user",user);
+                RequestDispatcher rs = request.getRequestDispatcher("index.jsp");
                 rs.forward(request,response);
             }
             else{
