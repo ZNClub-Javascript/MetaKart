@@ -30,6 +30,7 @@ public class Search extends HttpServlet {
                 product.put("title",rs.getString("NAME"));
                 product.put("category",rs.getString("CATEGORY"));
                 product.put("price",rs.getString("PRICE"));
+                product.put("url","product?p="+rs.getString("NAME"));
                 res.add(product);
             }
             ret.put("results",res);
