@@ -29,14 +29,37 @@
             $('.ui.form')
                     .form({
                         fields: {
-                            username: 'email',
-                            password: ['minLength[6]', 'empty']
+                            username: {
+                                identifier: 'email',
+                                rules: [
+                                    {
+                                        type   : 'empty',
+                                        prompt : 'Please enter a username'
+                                    },
+                                    {
+                                        type   : 'email',
+                                        prompt : 'Please valid email ID'
+                                    }
+                                ]
+                            },
+                            password: {
+                                identifier: 'password',
+                                rules: [
+                                    {
+                                        type   : 'empty',
+                                        prompt : 'Please enter a password'
+                                    },
+                                    {
+                                        type   : 'minLength[6]',
+                                        prompt : 'Your password must be at least 6 characters'
+                                    }
+                                ]
+                            }
                         }
-                    });
+                    })
+            ;
+            $('.ui.radio.checkbox').checkbox();
         });
-        $('.ui.radio.checkbox')
-                .checkbox()
-        ;
     </script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
@@ -50,12 +73,12 @@
                 Sign up for the freshest veggies!
             </div>
         </h2>
-        <form class="ui large form" method="post" action="/signUpController">
+        <form id="form" class="ui large form" method="post" action="/signUpController">
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="email" name="email" placeholder="E-mail address">
+                        <input type="text" name="email" placeholder="E-mail address">
                     </div>
                 </div>
                 <div class="field">
@@ -68,13 +91,13 @@
                     <label>User Type</label>
                     <div class="field">
                         <div class="ui radio checkbox">
-                            <input type="radio" name="user-type-farmer">
+                            <input type="radio" name="user-type" value="1">
                             <label>Farmer</label>
                         </div>
                     </div>
                     <div class="field">
                         <div class="ui radio checkbox">
-                            <input type="radio" name="user-type-farmer">
+                            <input type="radio" name="user-type" value="0">
                             <label>Customer</label>
                         </div>
                     </div>

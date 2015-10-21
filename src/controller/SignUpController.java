@@ -55,8 +55,7 @@ public class SignUpController extends HttpServlet {
             statement.setString(1, request.getParameter("email"));
             statement.setString(2, request.getParameter("password"));
 
-
-            String urlParameters  = "secret=6Lc7RA8TAAAAAA5gr8g9_Bmov4zWmSuSIej4iSAQ&response=" + request.getParameter("g-recaptch-response");
+            String urlParameters  = "secret=6Lc7RA8TAAAAAA5gr8g9_Bmov4zWmSuSIej4iSAQ&response=" + request.getParameter("g-recaptcha-response");
             byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
             int    postDataLength = postData.length;
             String requests       = "https://www.google.com/recaptcha/api/siteverify";
@@ -87,15 +86,12 @@ public class SignUpController extends HttpServlet {
             System.out.println("POST Response" + responses.toString());
 
 
-            System.out.println("farmer: " + request.getParameter("user-type-farmer"));
+            //System.out.println("farmer: " + request.getParameter("user-type-farmer"));
             //System.out.println("farmer: " + request.getParameter("g-recaptcha-response"));
             //System.out.println("customer: " + request.getParameter("user-type-customer"));
             statement.setInt(3, vcode);
             statement.setInt(4,0);
-            if(request.getParameter("user-type-farmer").equals("on"))
-                statement.setInt(5,1);
-            else
-                statement.setInt(5,0);
+            statement.setInt(5,Integer.parseInt(request.getParameter("user-type")));
             try {
                 statement.execute();
             } catch (Exception e) {
@@ -120,6 +116,7 @@ public class SignUpController extends HttpServlet {
             Transport.send(message);
             System.out.println("Sent message successfully....");
         } catch (MessagingException mex) {
+            response.sendRedirect("signup.jsp");
             mex.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
