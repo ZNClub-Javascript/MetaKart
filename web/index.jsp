@@ -1,3 +1,4 @@
+<%@ page import="java.sql.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -103,22 +104,31 @@
 </div>
 <div id="main" class="ui grid container">
     <div class="ui fluid cards">
+        <% try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM PRODUCTS");
+            ResultSet resultSet = statement.executeQuery();
+            System.out.println(resultSet.next());
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("NAME"));
+        %>
         <div class="ui card">
             <div class="image">
-                <img src="img/Vegs/apple.jpg">
+                <img src="<%=resultSet.getString("IMAGE")%>">
             </div>
             <div class="content">
-                <a class="header">kaanda</a>
+                <a class="header"><%=resultSet.getString("NAME")%></a>
 
                 <div class="meta">
-                    <span class="date">Hoarded for you</span>
+                    <span class="date"><%=resultSet.getString("DESCRIPTION")%></span>
                 </div>
                 <div class="ui mini star rating" data-max-rating="5" data-rating="3"></div>
                 <div class="left floated meta">
-                    Rs. 40/kg
+                    Rs. <%=resultSet.getInt("PRICE")%>/kg
                 </div>
                 <div id="add" class="ui right floated basic blue test button">
-                    +Add to cart
+                    <%=resultSet.getInt("STOCK")%> left: +Add to cart
                 </div>
             </div>
             <div class="extra content">
@@ -128,112 +138,17 @@
                 </a>
             </div>
         </div>
-        <div class="ui card">
-            <div class="image">
-                <img src="img/vegs/tomatoes.jpg">
-            </div>
-            <div class="content">
-                <a class="header">Tomatarrr</a>
+        <%
+                }
+            } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            }
+            catch (SQLException e)
+            {
+            e.printStackTrace();
+            }
+        %>
 
-                <div class="meta">
-                    <span class="date">khatamk</span>
-                </div>
-
-                <div class="description">
-                    Tomatoes are red juicy and delicious.
-                </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                    5 Sellers
-                </a>
-            </div>
-        </div>
-        <div class="ui card">
-            <div class="image">
-                <img src="img/vegs/broccoli.jpg">
-            </div>
-            <div class="content">
-                <a class="header">Broccoli</a>
-
-                <div class="meta">
-                    <span class="date">Not in Stock</span>
-                </div>
-                <div class="description">
-                    How about some tasty greens!
-                </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                    2 eaters!
-                </a>
-            </div>
-        </div>
-        <div class="ui card">
-            <div class="image">
-                <img src="img/vegs/peppers.jpg">
-            </div>
-            <div class="content">
-                <a class="header">Bell Peppers</a>
-
-                <div class="meta">
-                    <span class="date">Almost over</span>
-                </div>
-                <div class="description">
-                    Much Hot such pungency.
-                </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                    22 hot mouths!!
-                </a>
-            </div>
-        </div>
-        <div class="ui card">
-            <div class="image">
-                <img src="img/vegs/cabbage.jpg">
-            </div>
-            <div class="content">
-                <a class="header">Cabbage</a>
-
-                <div class="meta">
-                    <span class="date">In Stock</span>
-                </div>
-                <div class="description">
-                    Peal my layers.
-                </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                    22 layers
-                </a>
-            </div>
-        </div>
-        <div class="ui card">
-            <div class="image">
-                <img src="img/vegs/mushrooms.jpg">
-            </div>
-            <div class="content">
-                <a class="header">Mushrooms</a>
-
-                <div class="meta">
-                    <span class="date">About to arrive</span>
-                </div>
-                <div class="description">
-                    How about a healthy high?
-                </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                    10 marios down!
-                </a>
-            </div>
-        </div>
     </div>
 </div>
 
