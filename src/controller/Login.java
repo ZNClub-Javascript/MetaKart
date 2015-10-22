@@ -1,7 +1,6 @@
 package controller;
 
 import model.User;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +13,7 @@ import java.io.IOException;
  */
 public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("..Login Servlet");
         User user = new User();
         user.setUser(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));

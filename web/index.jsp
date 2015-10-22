@@ -4,6 +4,8 @@
     <title>FarmFresh</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="semantic-ui/semantic.css">
+    <link rel="stylesheet" href="semantic-ui/transition.min.css">
+    <link rel="stylesheet" href="semantic-ui/dimmer.min.css">
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
 
@@ -44,7 +46,9 @@
         }
     </style>
     <script src="jquery.js"></script>
-    <script src="semantic-ui/semantic.min.js">
+    <script src="semantic-ui/semantic.min.js"></script>
+    <script src="semantic-ui/transition.min.js"></script>
+    <script src="semantic-ui/dimmer.min.js">
     </script>
     <script>
         $(function () {
@@ -60,13 +64,10 @@
             //    onTopVisible: function(calculations) {
             //     window.scrollTo(0, $('#main').offset().top);
             // }});
+            $('#add').click(function () {
+                $('#modaldiv').modal('show');
+            });
         });
-        function myFunction() {
-            $('.test.modal')
-                    .modal('attach events', '.test.button', 'show')
-            ;
-
-        }
 
 
     </script>
@@ -80,7 +81,7 @@
     <div class="content">The best deals on the freshest vegetables are back!</div>
     <%}%>
 </div>
-<div class="ui modal">
+<div id="modaldiv" class="ui modal">
     <i class="close icon"></i>
 
     <div class="header">
@@ -88,7 +89,7 @@
     </div>
     <div class="image content">
         <div class="image">
-            <img src="cart.jsp">
+            <img height="300px" src="img/cart.jpg">
 
         </div>
         <div class="description">
@@ -116,8 +117,8 @@
                 <div class="left floated meta">
                     Rs. 40/kg
                 </div>
-                <div class="ui right floated basic blue test button" onclick="myFunction()">
-                    Add to cart
+                <div id="add" class="ui right floated basic blue test button">
+                    +Add to cart
                 </div>
             </div>
             <div class="extra content">
