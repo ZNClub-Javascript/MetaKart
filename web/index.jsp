@@ -103,7 +103,7 @@
     </div>
 </div>
 <div id="main" class="ui grid container">
-    <div class="ui fluid cards">
+    <div class="ui centered fluid cards">
         <% try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
