@@ -113,13 +113,14 @@
     </table>
     <table name="LOCATIONS_SEQ" schema="HR" catalog="" type="SEQUENCE"/>
     <table name="PRODUCTS" schema="HR" catalog="" type="TABLE">
+      <column name="ID" sqlType="NUMBER" precision="38" scale="0" nullable="false" jdbcType="3"/>
       <column name="NAME" sqlType="VARCHAR2" precision="4000" scale="0" nullable="false" jdbcType="12"/>
       <column name="DESCRIPTION" sqlType="VARCHAR2" precision="4000" scale="0" nullable="true" jdbcType="12"/>
-      <column name="PRICE" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>
+      <column name="PRICE" sqlType="NUMBER" precision="38" scale="0" nullable="false" jdbcType="3"/>
       <column name="IMAGE" sqlType="VARCHAR2" precision="4000" scale="0" nullable="true" jdbcType="12"/>
       <column name="STOCK" sqlType="NUMBER" precision="38" scale="0" nullable="false" jdbcType="3"/>
       <column name="CATEGORY" sqlType="VARCHAR2" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="SYS_C007071" columns="NAME"/>
+      <primary-key name="SYS_C007097" columns="ID"/>
     </table>
     <table name="REGIONS" schema="HR" catalog="" type="TABLE">
       <column name="REGION_ID" sqlType="NUMBER" precision="0" scale="-127" nullable="false" jdbcType="3"/>

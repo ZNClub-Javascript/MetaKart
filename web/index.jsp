@@ -114,7 +114,7 @@
                 System.out.println(resultSet.getString("NAME"));
         %>
         <div class="ui card">
-            <div class="image">
+            <div class="ui medium image">
                 <img src="<%=resultSet.getString("IMAGE")%>">
             </div>
             <div class="content">
@@ -127,16 +127,10 @@
                 <div class="left floated meta">
                     Rs. <%=resultSet.getInt("PRICE")%>/kg
                 </div>
-                <div id="add" class="ui right floated basic blue test button">
+            </div>
+                <div id="add" class="ui basic blue bottom attached button">
                     <%=resultSet.getInt("STOCK")%> left: +Add to cart
                 </div>
-            </div>
-            <div class="extra content">
-                <a>
-                    <i class="user icon"></i>
-                    22 Customers
-                </a>
-            </div>
         </div>
         <%
                 }
