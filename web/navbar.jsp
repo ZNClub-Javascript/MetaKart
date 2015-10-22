@@ -1,4 +1,4 @@
-<%@ page import="model.user" %>
+<%@ page import="model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script>
     $(function () {
@@ -34,7 +34,7 @@
 
     <div class="right menu">
         <div class="item">
-            <% if ((user) session.getAttribute("user") == null) {%>
+            <% if ((User) session.getAttribute("user") == null) {%>
             <a id="logIn" class="ui button" style="background: #9CCC65">log in</a>
 
             <div class="ui popup">
@@ -60,7 +60,7 @@
                 </form>
             </div>
             <% } else {%>
-            <div id="logOut" class="ui red label"><%=((user) session.getAttribute("user")).getUser()%>
+            <div id="logOut" class="ui red label"><%=((User) session.getAttribute("user")).getUser()%>
             </div>
             <div class="ui inverted popup">
                 <div class="ui inverted vertical menu">
