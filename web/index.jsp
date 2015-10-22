@@ -105,7 +105,7 @@
     <div class="ui fluid cards">
         <div class="ui card">
             <div class="image">
-                <img src="img/onions.jpg">
+                <img src="img/Vegs/apple.jpg">
             </div>
             <div class="content">
                 <a class="header">kaanda</a>
@@ -130,7 +130,7 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/tomatoes.jpg">
+                <img src="img/vegs/tomatoes.jpg">
             </div>
             <div class="content">
                 <a class="header">Tomatarrr</a>
@@ -152,7 +152,7 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/broccoli.jpg">
+                <img src="img/vegs/broccoli.jpg">
             </div>
             <div class="content">
                 <a class="header">Broccoli</a>
@@ -173,7 +173,7 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/peppers.jpg">
+                <img src="img/vegs/peppers.jpg">
             </div>
             <div class="content">
                 <a class="header">Bell Peppers</a>
@@ -194,7 +194,7 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/cabbage.jpg">
+                <img src="img/vegs/cabbage.jpg">
             </div>
             <div class="content">
                 <a class="header">Cabbage</a>
@@ -215,7 +215,7 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/mushrooms.jpg">
+                <img src="img/vegs/mushrooms.jpg">
             </div>
             <div class="content">
                 <a class="header">Mushrooms</a>

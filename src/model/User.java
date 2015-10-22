@@ -16,7 +16,6 @@ public class User {
         this.password = password;
     }
 
-
     public String getUser() {
         return user;
     }
