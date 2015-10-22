@@ -65,7 +65,8 @@
             //    onTopVisible: function(calculations) {
             //     window.scrollTo(0, $('#main').offset().top);
             // }});
-            $('#add').click(function () {
+            $('#mycart' +
+                    '').click(function () {
                 $('#modaldiv').modal('show');
             });
         });
@@ -125,9 +126,12 @@
                 <div class="left floated meta">
                     Rs. <%=resultSet.getInt("PRICE")%>/kg
                 </div>
+                <div class="right floated meta">
+                    <%=resultSet.getInt("STOCK")%> Items
+                </div>
             </div>
-                <div id="add" class="ui basic blue bottom attached button">
-                    <%=resultSet.getInt("STOCK")%> left: +Add to cart
+                <div id="<%=resultSet.getInt("ID")%>" class="ui basic blue bottom attached button">
+                    +Add to cart
                 </div>
         </div>
         <%

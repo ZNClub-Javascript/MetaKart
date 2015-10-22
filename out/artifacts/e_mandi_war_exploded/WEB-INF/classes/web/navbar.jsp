@@ -64,7 +64,7 @@
             </div>
             <div class="ui inverted popup">
                 <div class="ui inverted vertical menu">
-                    <a href="#" class="item">My Cart<i class="blue cart icon"></i></a>
+                    <a id="mycart" href="#" class="item">My Cart<i class="blue cart icon"></i></a>
                     <a href="/logout" class="item">Log out<i class="green sign out icon"></i></a>
                 </div>
             </div>
