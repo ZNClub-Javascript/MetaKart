@@ -59,4 +59,19 @@
         <servlet-name>product</servlet-name>
         <url-pattern>/product</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>reset</servlet-name>
+        <servlet-class>controller.ResetPassword</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>reset</servlet-name>
+        <url-pattern>/reset</url-pattern>
+    </servlet-mapping><servlet>
+    <servlet-name>resetInit</servlet-name>
+    <servlet-class>controller.ResetPasswordInit</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>resetInit</servlet-name>
+        <url-pattern>/resetInit</url-pattern>
+    </servlet-mapping>
 </web-app>
