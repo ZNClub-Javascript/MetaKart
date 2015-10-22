@@ -5,7 +5,7 @@ import java.sql.*;
 /**
  * Created by fwarr on 23-Sep-15.
  */
-public class user {
+public class User {
     private String user, password;
 
     public String getPassword() {
