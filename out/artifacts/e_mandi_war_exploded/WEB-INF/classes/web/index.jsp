@@ -65,7 +65,8 @@
             //    onTopVisible: function(calculations) {
             //     window.scrollTo(0, $('#main').offset().top);
             // }});
-            $('#mycart').click(function () {
+            $('#mycart' +
+                    '').click(function () {
                 $('#modaldiv').modal('show');
             });
         });
@@ -129,7 +130,7 @@
                     <%=resultSet.getInt("STOCK")%> Items
                 </div>
             </div>
-                <div id="add" class="ui basic blue bottom attached button">
+                <div id="<%=resultSet.getInt("ID")%>" class="ui basic blue bottom attached button">
                     +Add to cart
                 </div>
         </div>

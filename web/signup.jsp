@@ -78,7 +78,7 @@
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="email" placeholder="E-mail address">
+                        <input type="email" name="email" placeholder="E-mail address">
                     </div>
                 </div>
                 <div class="field">
@@ -109,10 +109,6 @@
             <div class="ui error message"></div>
 
         </form>
-
-        <div class="ui message">
-            New to us? <a href="#">Sign Up</a>
-        </div>
     </div>
 </div>
 </body>
