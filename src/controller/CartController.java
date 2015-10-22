@@ -1,5 +1,7 @@
 package controller;
 
+import model.Cart;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,9 +15,9 @@ import java.io.IOException;
 @WebServlet(name = "CartController")
 public class CartController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String vid = request.getParameter("vid");
-
-
+        int vid = Integer.parseInt(request.getParameter("vid"));
+        Cart cart=(Cart)request.getSession().getAttribute("cart");
+        cart.add(vid);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
