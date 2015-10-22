@@ -111,7 +111,7 @@
         </form>
 
         <div class="ui message">
-            Forgot your password? <a href="/resetInit?email=${requestScope.get("username")}">Reset it here!</a>
+            Forgot your password? <a href="/resetInit?email=${param['username']}">Reset it here!</a>
         </div>
     </div>
 </div>
