@@ -4,6 +4,8 @@
     <title>FarmFresh</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="semantic-ui/semantic.css">
+    <link rel="stylesheet" href="semantic-ui/transition.min.css">
+    <link rel="stylesheet" href="semantic-ui/dimmer.min.css">
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
 
@@ -45,6 +47,9 @@
     </style>
     <script src="jquery.js"></script>
     <script src="semantic-ui/semantic.min.js"></script>
+    <script src="semantic-ui/transition.min.js"></script>
+    <script src="semantic-ui/dimmer.min.js">
+    </script>
     <script>
         $(function () {
             var scroll;
@@ -59,36 +64,61 @@
             //    onTopVisible: function(calculations) {
             //     window.scrollTo(0, $('#main').offset().top);
             // }});
+            $('#add').click(function () {
+                $('#modaldiv').modal('show');
+            });
         });
+
+
     </script>
+
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
 
 <div class="offer">
-    <% for(int i=0; i<2;i++){ %>
+    <% for (int i = 0; i < 2; i++) { %>
     <div class="content">The best deals on the freshest vegetables are back!</div>
     <%}%>
 </div>
+<div id="modaldiv" class="ui modal">
+    <i class="close icon"></i>
 
+    <div class="header">
+        My Cart
+    </div>
+    <div class="image content">
+        <div class="image">
+            <img height="300px" src="img/cart.jpg">
+
+        </div>
+        <div class="description">
+            <div class="ui header">My Veggies</div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui button">Later</div>
+        <div class="ui button">Proceed</div>
+    </div>
+</div>
 <div id="main" class="ui grid container">
     <div class="ui fluid cards">
         <div class="ui card">
             <div class="image">
-                <img src="img/onions.jpg">
+                <img src="img/Vegs/apple.jpg">
             </div>
             <div class="content">
-                <a class="header">Onions</a>
+                <a class="header">kaanda</a>
 
                 <div class="meta">
                     <span class="date">Hoarded for you</span>
                 </div>
-                <div class="ui mini star rating"  data-max-rating="5" data-rating="3"></div>
+                <div class="ui mini star rating" data-max-rating="5" data-rating="3"></div>
                 <div class="left floated meta">
                     Rs. 40/kg
                 </div>
-                <div class="ui right floated basic blue button">
-                    Buy
+                <div id="add" class="ui right floated basic blue test button">
+                    +Add to cart
                 </div>
             </div>
             <div class="extra content">
@@ -100,14 +130,15 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/tomatoes.jpg">
+                <img src="img/vegs/tomatoes.jpg">
             </div>
             <div class="content">
-                <a class="header">Tomatoes</a>
+                <a class="header">Tomatarrr</a>
 
                 <div class="meta">
-                    <span class="date">In Stock</span>
+                    <span class="date">khatamk</span>
                 </div>
+
                 <div class="description">
                     Tomatoes are red juicy and delicious.
                 </div>
@@ -121,7 +152,7 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/broccoli.jpg">
+                <img src="img/vegs/broccoli.jpg">
             </div>
             <div class="content">
                 <a class="header">Broccoli</a>
@@ -142,7 +173,7 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/peppers.jpg">
+                <img src="img/vegs/peppers.jpg">
             </div>
             <div class="content">
                 <a class="header">Bell Peppers</a>
@@ -163,7 +194,7 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/cabbage.jpg">
+                <img src="img/vegs/cabbage.jpg">
             </div>
             <div class="content">
                 <a class="header">Cabbage</a>
@@ -184,7 +215,7 @@
         </div>
         <div class="ui card">
             <div class="image">
-                <img src="img/mushrooms.jpg">
+                <img src="img/vegs/mushrooms.jpg">
             </div>
             <div class="content">
                 <a class="header">Mushrooms</a>
