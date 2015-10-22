@@ -1,6 +1,6 @@
 package controller;
 
-import model.user;
+import model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +26,7 @@ public class Vcode extends HttpServlet {
                 statement = connection.prepareStatement("UPDATE USERS SET VERIFIED = 1 WHERE VCODE =?");
                 statement.setInt(1,vcode);
                 if(statement.execute()) {
-                    user user = new user();
+                    User user = new User();
                     user.setUser(resultSet.getString("USERNAME"));
                     request.getSession().setAttribute("user", user);
                 }
