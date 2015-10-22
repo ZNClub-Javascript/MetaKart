@@ -16,7 +16,9 @@
                 .search({
                     apiSettings: {
                         url: '/search?q={query}'
-                    }
+                    },
+                    maxResults: 10,
+                    cache: true
                 });
     })
 </script>

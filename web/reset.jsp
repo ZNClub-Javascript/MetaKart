@@ -56,12 +56,9 @@
                                 ]
                             }
                         }
-                    })
-            ;
-            $('.ui.radio.checkbox').checkbox();
+                    });
         });
     </script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <div class="ui center aligned grid">
@@ -70,40 +67,24 @@
             <img src="img/story_carrots.png" class="image">
 
             <div class="content">
-                Sign up for the freshest veggies!
+                Everyone forgets things!
             </div>
         </h2>
-        <form id="form" class="ui large form" method="post" action="/signUpController">
+        <form id="form" class="ui large form" method="post" action="/reset">
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="email" placeholder="E-mail address">
+                        <input type="number" name="vcode" placeholder="Verification Code">
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="lock icon"></i>
-                        <input type="password" name="password" placeholder="Password">
+                        <input type="password" name="password" placeholder="New Password">
                     </div>
                 </div>
-                <div class="inline fields">
-                    <label>User Type</label>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input type="radio" name="user-type" value="1">
-                            <label>Farmer</label>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <input type="radio" name="user-type" value="0">
-                            <label>Customer</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="g-recaptcha" data-sitekey="6Lc7RA8TAAAAAHDh4WnW8GHdnxrdEL7iaujXNaz7"></div>
-                <input type="submit" class="ui fluid large teal submit button" value="sign up!"/>
+                <input type="submit" class="ui fluid large teal submit button" value="reset!"/>
             </div>
 
             <div class="ui error message"></div>
@@ -111,7 +92,7 @@
         </form>
 
         <div class="ui message">
-            Forgot your password? <a href="/resetInit?email=${requestScope.get("username")}">Reset it here!</a>
+            Almost done!
         </div>
     </div>
 </div>
