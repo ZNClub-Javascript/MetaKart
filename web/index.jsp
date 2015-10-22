@@ -114,9 +114,7 @@
                 System.out.println(resultSet.getString("NAME"));
         %>
         <div class="ui card">
-            <div class="ui medium image">
-                <img src="<%=resultSet.getString("IMAGE")%>">
-            </div>
+                <img class="ui medium image" src="<%=resultSet.getString("IMAGE")%>">
             <div class="content">
                 <a class="header"><%=resultSet.getString("NAME")%></a>
 
