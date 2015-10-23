@@ -488,7 +488,7 @@
       <excludeFolder url="file://$MODULE_DIR$/out/artifacts" />
       <excludeFolder url="file://$MODULE_DIR$/out/artifacts/e_mandi_war_exploded" />
     </content>
-    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="Oracle 11g" level="project" />
