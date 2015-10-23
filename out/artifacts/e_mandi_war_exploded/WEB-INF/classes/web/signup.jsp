@@ -111,7 +111,7 @@
         </form>
 
         <div class="ui message">
-            New to us? <a href="#">Sign Up</a>
+            Forgot your password? <a href="/resetInit?email=${param['username']}">Reset it here!</a>
         </div>
     </div>
 </div>
