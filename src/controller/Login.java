@@ -1,5 +1,6 @@
 package controller;
 
+import model.Cart;
 import model.User;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import java.io.IOException;
 public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("..Login Servlet");
+        Cart cart = new Cart();
         User user = new User();
         user.setUser(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
@@ -23,6 +25,7 @@ public class Login extends HttpServlet {
             {
                 System.out.println("Validated");
                 request.getSession().setAttribute("user",user);
+                request.getSession().setAttribute("cart",cart);
                 RequestDispatcher rs = request.getRequestDispatcher("index.jsp");
                 rs.forward(request,response);
             }
