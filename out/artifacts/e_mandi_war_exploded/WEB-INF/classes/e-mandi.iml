@@ -494,5 +494,6 @@
     <orderEntry type="library" name="Oracle 11g" level="project" />
     <orderEntry type="library" name="mail" level="project" />
     <orderEntry type="library" name="json" level="project" />
+    <orderEntry type="library" name="jstl-1.2" level="project" />
   </component>
 </module>

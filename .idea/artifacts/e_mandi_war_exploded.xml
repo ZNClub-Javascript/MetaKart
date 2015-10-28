@@ -12,6 +12,7 @@
           <element id="library" level="project" name="Oracle 11g" />
           <element id="library" level="project" name="mail" />
           <element id="library" level="project" name="json" />
+          <element id="library" level="project" name="jstl-1.2" />
         </element>
       </element>
     </root>
