@@ -1,4 +1,7 @@
 <%@ page import="model.User" %>
+<%@ page import="model.Cart" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script>
     $(function () {
@@ -22,6 +25,47 @@
                 });
     })
 </script>
+<div id="modaldiv" class="ui modal">
+    <i class="close icon"></i>
+
+    <div class="header">
+        My Cart
+    </div>
+    <div class="image content">
+        <div class="image">
+            <img height="300px" src="img/cart.jpg">
+
+        </div>
+
+        <div class="ui segment container">
+        <div class="description">
+            <div class="ui header">My Veggies</div>
+        </div>
+            <%
+                try {
+                    Cart c = (Cart) request.getSession().getAttribute("cart");
+                    String l[] = c.getItems();
+
+                for(int i = 0;i<l.length;i++){
+            %>
+            <div class="ui fluid relaxed divided list">
+                <div class="item">
+                    <div class="content">
+                        <div class="description"><%=l[i]%></div>
+                    </div>
+                </div>
+            </div>
+            <%}} catch (Exception e) {
+                e.printStackTrace();
+            }%>
+
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui deny button">Later</div>
+        <a class="ui button" href = "/cart.jsp">Proceed</a>
+    </div>
+</div>
 <div class="ui fixed sticky secondary inverted menu" style="background-color: #7CB342; padding: 5px; height: 7%">
     <a class="active item">Home</a>
     <div class="item">
