@@ -83,26 +83,6 @@
     <div class="content">The best deals on the freshest vegetables are back!</div>
     <%}%>
 </div>
-<div id="modaldiv" class="ui modal">
-    <i class="close icon"></i>
-
-    <div class="header">
-        My Cart
-    </div>
-    <div class="image content">
-        <div class="image">
-            <img height="300px" src="img/cart.jpg">
-
-        </div>
-        <div class="description">
-            <div class="ui header">My Veggies</div>
-        </div>
-    </div>
-    <div class="actions">
-        <div class="ui button">Later</div>
-        <div class="ui button">Proceed</div>
-    </div>
-</div>
 <div id="main" class="ui grid container">
     <div class="ui centered fluid cards">
         <% try {
@@ -110,9 +90,7 @@
             Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM PRODUCTS");
             ResultSet resultSet = statement.executeQuery();
-            System.out.println(resultSet.next());
             while (resultSet.next()) {
-                System.out.println(resultSet.getString("NAME"));
         %>
         <div class="ui card">
                 <img class="ui medium image" src="<%=resultSet.getString("IMAGE")%>">
@@ -130,7 +108,7 @@
                     <%=resultSet.getInt("STOCK")%> Items
                 </div>
             </div>
-                <div id="<%=resultSet.getInt("ID")%>" class="ui basic blue bottom attached button">
+                <div id="<%=resultSet.getInt("ID")%>" class="ui basic blue bottom attached button" onclick="$.ajax('/cart?vid=<%=resultSet.getInt("ID")%>');$('#<%=resultSet.getInt("ID")%>').removeClass('basic');">
                     +Add to cart
                 </div>
         </div>

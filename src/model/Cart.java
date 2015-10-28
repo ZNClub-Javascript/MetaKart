@@ -60,6 +60,23 @@ public class Cart {
         System.out.println(Arrays.asList(al));
         return al;
     }
+
+    public String[] getImages() throws SQLException, ClassNotFoundException{
+        System.out.println(cartItems.size());
+        String al[] = new String[cartItems.size()];
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
+        for(int i = 0; i< cartItems.size();i++) {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM PRODUCTS WHERE ID = ?");
+            statement.setInt(1, (int)cartItems.get(i));
+            ResultSet resultSet = statement.executeQuery();
+            if(resultSet.next()){
+                al[i]= resultSet.getString("IMAGE");
+            }
+        }
+        System.out.println(Arrays.asList(al));
+        return al;
+    }
     public void remove(int vid){
         cartItems.remove((Integer) vid);
     }

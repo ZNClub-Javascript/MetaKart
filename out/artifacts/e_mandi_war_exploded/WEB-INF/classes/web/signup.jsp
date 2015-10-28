@@ -33,12 +33,12 @@
                                 identifier: 'email',
                                 rules: [
                                     {
-                                        type: 'empty',
-                                        prompt: 'Please enter a username'
+                                        type   : 'empty',
+                                        prompt : 'Please enter a username'
                                     },
                                     {
-                                        type: 'email',
-                                        prompt: 'Please valid email ID'
+                                        type   : 'email',
+                                        prompt : 'Please valid email ID'
                                     }
                                 ]
                             },
@@ -46,12 +46,12 @@
                                 identifier: 'password',
                                 rules: [
                                     {
-                                        type: 'empty',
-                                        prompt: 'Please enter a password'
+                                        type   : 'empty',
+                                        prompt : 'Please enter a password'
                                     },
                                     {
-                                        type: 'minLength[6]',
-                                        prompt: 'Your password must be at least 6 characters'
+                                        type   : 'minLength[6]',
+                                        prompt : 'Your password must be at least 6 characters'
                                     }
                                 ]
                             }
@@ -89,7 +89,6 @@
                 </div>
                 <div class="inline fields">
                     <label>User Type</label>
-
                     <div class="field">
                         <div class="ui radio checkbox">
                             <input type="radio" name="user-type" value="1">
@@ -103,9 +102,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="g-recaptcha" data-sitekey="6Lc7RA8TAAAAAHDh4WnW8GHdnxrdEL7iaujXNaz7"></div>
-                </div>
+                <div class="g-recaptcha" data-sitekey="6Lc7RA8TAAAAAHDh4WnW8GHdnxrdEL7iaujXNaz7"></div>
                 <input type="submit" class="ui fluid large teal submit button" value="sign up!"/>
             </div>
 

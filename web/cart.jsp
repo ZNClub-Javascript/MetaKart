@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="column">
-                <form class="ui form segment">
+                <form class="ui form segment" action="/checkout" method="post">
                     <div class="two fields">
                         <div class="field">
                             <label>Credit Card</label>

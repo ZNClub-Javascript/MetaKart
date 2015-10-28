@@ -74,4 +74,12 @@
         <servlet-name>resetInit</servlet-name>
         <url-pattern>/resetInit</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ccontroller</servlet-name>
+        <servlet-class>controller.CartController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ccontroller</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
 </web-app>
