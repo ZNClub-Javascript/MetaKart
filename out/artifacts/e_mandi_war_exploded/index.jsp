@@ -1,4 +1,6 @@
 <%@ page import="java.sql.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -85,43 +87,37 @@
 </div>
 <div id="main" class="ui grid container">
     <div class="ui centered fluid cards">
-        <% try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM PRODUCTS");
-            ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-        %>
+        <sql:setDataSource var="snapshot" driver="oracle.jdbc.driver.OracleDriver"
+                           url="jdbc:oracle:thin:@//localhost:1521"
+                           user="hr"  password="hr"/>
+
+        <sql:query dataSource="${snapshot}" var="result">
+            SELECT * FROM PRODUCTS
+        </sql:query>
+
+        <c:forEach var="row" items="${result.rows}">
+
         <div class="ui card">
-                <img class="ui medium image" src="<%=resultSet.getString("IMAGE")%>">
+                <img class="ui medium image" src="${row.image}">
             <div class="content">
-                <a class="header"><%=resultSet.getString("NAME")%></a>
+                <a class="header">${row.name}</a>
 
                 <div class="meta">
-                    <span class="date"><%=resultSet.getString("DESCRIPTION")%></span>
+                    <span class="date">${row.description}</span>
                 </div>
                 <div class="ui mini star rating" data-max-rating="5" data-rating="3"></div>
                 <div class="left floated meta">
-                    Rs. <%=resultSet.getInt("PRICE")%>/kg
+                    Rs. ${row.price}/kg
                 </div>
                 <div class="right floated meta">
-                    <%=resultSet.getInt("STOCK")%> Items
+                    ${row.stock} Items
                 </div>
             </div>
-                <div id="<%=resultSet.getInt("ID")%>" class="ui basic blue bottom attached button" onclick="$.ajax('/cart?vid=<%=resultSet.getInt("ID")%>');$('#<%=resultSet.getInt("ID")%>').removeClass('basic');">
+                 <div id="${row.id}" class="ui basic blue bottom attached button" onclick="$.ajax('/cart?vid='+'${row.id}');$('#'+'${row.id}').removeClass('basic');">
                     +Add to cart
                 </div>
         </div>
-        <%
-                }
-            } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            }
-            catch (SQLException e)
-            {
-            e.printStackTrace();
-            }
-        %>
+        </c:forEach>
 
     </div>
 </div>
