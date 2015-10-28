@@ -30,7 +30,7 @@ public class SignUpController extends HttpServlet {
         String to = request.getParameter("email");
 
         // Sender's email ID needs to be mentioned
-        String from = "f.warren210@gmail.com";
+        String from = "emandi74@gmail.com";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -41,7 +41,7 @@ public class SignUpController extends HttpServlet {
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication("f.warren210@gmail.com", "motoxt720");
+                        return new PasswordAuthentication("emandi74@gmail.com", "freshVeggies");
                     }
                 });
 
