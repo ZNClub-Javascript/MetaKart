@@ -115,13 +115,8 @@ public class SignUpController extends HttpServlet {
             // Send message
             Transport.send(message);
             System.out.println("Sent message successfully....");
-        } catch (MessagingException mex) {
-            response.sendRedirect("signup.jsp");
+        } catch (MessagingException | ClassNotFoundException | SQLException mex) {
             mex.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 }

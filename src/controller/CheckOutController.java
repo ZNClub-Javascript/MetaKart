@@ -1,5 +1,7 @@
 package controller;
 
+import model.User;
+
 import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -20,7 +22,7 @@ public class CheckOutController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 // Recipient's email ID needs to be mentioned.
         Random r = new Random();
-        String to = (String) request.getSession().getAttribute("user");
+        String to = ((User) request.getSession().getAttribute("user")).getUser();
 
         // Sender's email ID needs to be mentioned
         String from = "emandi74@gmail.com";
@@ -51,10 +53,7 @@ public class CheckOutController extends HttpServlet {
             message.setSubject("E-Mandi: Order Confirmation");
 
             // Now set the actual message
-            StringBuilder str = new StringBuilder();
-            str.append("<h3>A confirmation of your order no: ").append(r.nextInt(9999)).append("</h3>");
-            str.append("<img src = \"http://ep.yimg.com/ay/yhst-30578333464715/organic-vegetable-of-the-month-club-5-lbs-per-month-1.gif\"></img>");
-            message.setText(str.toString(), "text/html");
+            message.setText("<h3>A confirmation of your order no: " + r.nextInt(9999) + "</h3>" + "<img src = \"http://ep.yimg.com/ay/yhst-30578333464715/organic-vegetable-of-the-month-club-5-lbs-per-month-1.gif\"></img>", "text/html");
 
             // Send message
             Transport.send(message);

@@ -8,5 +8,5 @@
     <file type="web" url="file://$PROJECT_DIR$/out/artifacts/e_mandi_war_exploded/WEB-INF/classes/out/artifacts/e_mandi_war_exploded/WEB-INF/web.xml" />
   </component>
   <component name="IdProvider" IDEtalkID="717AD2062AFE8A21ABF6CD6BE895E9D9" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="true" jdk-15="true" project-jdk-name="1.8.51" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>
