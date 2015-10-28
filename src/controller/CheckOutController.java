@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Random;
 
 /**
  * Created by Varun on 10/28/2015.
@@ -18,7 +19,8 @@ import java.util.Properties;
 public class CheckOutController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 // Recipient's email ID needs to be mentioned.
-        String to = (String) request.getSession().getAttribute("email");
+        Random r = new Random();
+        String to = (String) request.getSession().getAttribute("user");
 
         // Sender's email ID needs to be mentioned
         String from = "emandi74@gmail.com";
@@ -49,7 +51,10 @@ public class CheckOutController extends HttpServlet {
             message.setSubject("E-Mandi: Order Confirmation");
 
             // Now set the actual message
-            message.setText("And this is crazy, your account is ready.\n Mail us maybe?\nYour verification code link: http://localhost:8086/verify?vcode=");
+            StringBuilder str = new StringBuilder();
+            str.append("<h3>A confirmation of your order no: ").append(r.nextInt(9999)).append("</h3>");
+            str.append("<img src = \"http://ep.yimg.com/ay/yhst-30578333464715/organic-vegetable-of-the-month-club-5-lbs-per-month-1.gif\"></img>");
+            message.setText(str.toString(), "text/html");
 
             // Send message
             Transport.send(message);
