@@ -31,11 +31,15 @@
     <h2 class="ui teal image header">
       <img src="img/cart.jpg" class="image">
       <div class="content">
-        Your Order has been placed
+        Order Confirmation
       </div>
     </h2>
     <div class="ui message">
+        Your order has been successfully placed
     </div>
+      <div class="ui fluid button">
+          <a href="index.jsp">Continue Shopping</a>
+      </div>
   </div>
 </div>
 </body>
