@@ -40,6 +40,7 @@ public class CheckOutController extends HttpServlet {
                     }
                 });
         try {
+            response.sendRedirect("checkoutsuccess.jsp");
             // Create a default MimeMessage object.
             MimeMessage message = new MimeMessage(session);
 
@@ -53,7 +54,7 @@ public class CheckOutController extends HttpServlet {
             message.setSubject("E-Mandi: Order Confirmation");
 
             // Now set the actual message
-            message.setText("<h3>A confirmation of your order no: " + r.nextInt(9999) + "</h3>" + "<img src = \"http://ep.yimg.com/ay/yhst-30578333464715/organic-vegetable-of-the-month-club-5-lbs-per-month-1.gif\"></img>", "text/html");
+            message.setContent("<h3>A confirmation of your order no: " + r.nextInt(9999) + "</h3>" + "<img src = height = \"200\" \"http://ep.yimg.com/ay/yhst-30578333464715/organic-vegetable-of-the-month-club-5-lbs-per-month-1.gif\"></img>","text/html");
 
             // Send message
             Transport.send(message);
