@@ -38,36 +38,33 @@
         </div>
 
         <div class="ui segment container">
-        <div class="description">
-            <div class="ui header">My Veggies</div>
-        </div>
-            <%
-                try {
-                    Cart c = (Cart) request.getSession().getAttribute("cart");
-                    String l[] = c.getItems();
-
-                for(int i = 0;i<l.length;i++){
-            %>
-            <div class="ui fluid relaxed divided list">
-                <div class="item">
-                    <div class="content">
-                        <div class="description"><%=l[i]%></div>
+            <div class="description">
+                <div class="ui header">My Veggies</div>
+            </div>
+            <div ng-app="cartApp">
+                <div ng-controller="CartRefreshController as cart">
+                    <div ng-repeat="item in cartData">
+                        <div class="ui fluid relaxed divided list">
+                            <div class="item">
+                                <div class="content">
+                                    <div class="description">{{item.name}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <%}} catch (Exception e) {
-                e.printStackTrace();
-            }%>
-
         </div>
     </div>
     <div class="actions">
         <div class="ui deny button">Later</div>
-        <a class="ui button" href = "/cart.jsp">Proceed</a>
+        <a class="ui button" href="/cart.jsp">Proceed</a>
     </div>
 </div>
 <div class="ui fixed sticky secondary inverted menu" style="background-color: #7CB342; padding: 5px; height: 7%">
     <a class="active item">Home</a>
+
     <div class="item">
         <div class="ui search">
             <div class="ui inverted transparent icon input">

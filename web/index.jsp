@@ -51,8 +51,9 @@
     <script src="jquery.js"></script>
     <script src="semantic-ui/semantic.min.js"></script>
     <script src="semantic-ui/transition.min.js"></script>
-    <script src="semantic-ui/dimmer.min.js">
-    </script>
+    <script src="semantic-ui/dimmer.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="cart.js"></script>
     <script>
         $(function () {
             var scroll;

@@ -90,4 +90,12 @@
         <servlet-name>checkoutcontroller</servlet-name>
         <url-pattern>/checkout</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>cartrefresh</servlet-name>
+        <servlet-class>controller.CartRefreshController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cartrefresh</servlet-name>
+        <url-pattern>/getCart</url-pattern>
+    </servlet-mapping>
 </web-app>
