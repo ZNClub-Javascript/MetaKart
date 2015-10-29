@@ -26,8 +26,7 @@ public class Login extends HttpServlet {
                 System.out.println("Validated");
                 request.getSession().setAttribute("user",user);
                 request.getSession().setAttribute("cart",cart);
-                RequestDispatcher rs = request.getRequestDispatcher("index.jsp");
-                rs.forward(request,response);
+                response.sendRedirect("/");
             }
             else{
                 RequestDispatcher rs = request.getRequestDispatcher("signup.jsp");
