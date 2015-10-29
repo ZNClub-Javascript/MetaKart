@@ -42,7 +42,7 @@ public class ResetPasswordInit extends HttpServlet {
                 Session session = Session.getInstance(props,
                         new javax.mail.Authenticator() {
                             protected PasswordAuthentication getPasswordAuthentication() {
-                                return new PasswordAuthentication("f.warren210@gmail.com", "motoxt720");
+                                return new PasswordAuthentication("emandi74@gmail.com", "freshVeggies");
                             }
                         });
 
