@@ -41,7 +41,7 @@
             <div class="description">
                 <div class="ui header">My Veggies</div>
             </div>
-            <div ng-app="cartApp">
+
                 <div ng-controller="CartRefreshController as cart">
                     <div ng-repeat="item in cartData">
                         <div class="ui fluid relaxed divided list">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
         </div>
     </div>
     <div class="actions">
