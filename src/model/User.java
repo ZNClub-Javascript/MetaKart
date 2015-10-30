@@ -8,6 +8,16 @@ import java.sql.*;
 public class User {
     private String user, password;
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    private int type;
+
     public String getPassword() {
         return password;
     }

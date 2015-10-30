@@ -102,12 +102,22 @@
                     </div>
                 </form>
             </div>
-            <% } else {%>
+            <% } else if(((User) session.getAttribute("user")).getType()==0) {%>
             <div id="logOut" class="ui red label"><%=((User) session.getAttribute("user")).getUser()%>
             </div>
             <div class="ui inverted popup">
                 <div class="ui inverted vertical menu">
-                    <a id="mycart" href="#" class="item">My Cart<i class="blue cart icon"></i></a>
+                    <a id="mycart" class="item">My Cart<i class="blue cart icon"></i></a>
+                    <a href="/logout" class="item">Log out<i class="green sign out icon"></i></a>
+                </div>
+            </div>
+            <%}
+            else if(((User) session.getAttribute("user")).getType()==1) {%>
+            <div id="logOut" class="ui blue label"><%=((User) session.getAttribute("user")).getUser()%>
+            </div>
+            <div class="ui inverted popup">
+                <div class="ui inverted vertical menu">
+                    <a id="upload" href="/upload.jsp" class="item">Add a vegetable<i class="blue upload icon"></i></a>
                     <a href="/logout" class="item">Log out<i class="green sign out icon"></i></a>
                 </div>
             </div>

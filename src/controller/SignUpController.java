@@ -92,11 +92,9 @@ public class SignUpController extends HttpServlet {
             statement.setInt(3, vcode);
             statement.setInt(4,0);
             statement.setInt(5,Integer.parseInt(request.getParameter("user-type")));
-            try {
-                statement.execute();
-            } catch (Exception e) {
-                response.sendRedirect("signup.jsp");
-            }
+
+            statement.execute();
+
             // Create a default MimeMessage object.
             MimeMessage message = new MimeMessage(session);
 
@@ -118,6 +116,7 @@ public class SignUpController extends HttpServlet {
             response.sendRedirect("/");
         } catch (MessagingException | ClassNotFoundException | SQLException mex) {
             mex.printStackTrace();
+            response.sendRedirect("signup.jsp");
         }
     }
 }

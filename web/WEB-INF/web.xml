@@ -98,4 +98,12 @@
         <servlet-name>cartrefresh</servlet-name>
         <url-pattern>/getCart</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>upload</servlet-name>
+        <servlet-class>controller.farmerUpload</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>upload</servlet-name>
+        <url-pattern>/up</url-pattern>
+    </servlet-mapping>
 </web-app>
