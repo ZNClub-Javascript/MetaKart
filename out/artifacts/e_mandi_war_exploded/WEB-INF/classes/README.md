@@ -1,2 +1,2 @@
-# e-mandi
-An online vegetable market aimed at improving the condition of india's farmers.
+# MetaKart
+An online shopping service aimed at making shopping more convenient and cheaper

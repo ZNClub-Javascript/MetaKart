@@ -48,7 +48,7 @@ public class Cart {
         System.out.println(cartItems.size());
         String al[] = new String[cartItems.size()];
         Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
+        Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "HR", "HR");
         for(int i = 0; i< cartItems.size();i++) {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM PRODUCTS WHERE ID = ?");
             statement.setInt(1, (int)cartItems.get(i));
