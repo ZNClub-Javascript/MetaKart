@@ -18,7 +18,7 @@ public class Vcode extends HttpServlet {
         int vcode = Integer.parseInt(request.getParameter("vcode"));
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
+            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "HR", "HR");
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM USERS WHERE VCODE = ?");
             statement.setInt(1,vcode);
             ResultSet resultSet = statement.executeQuery();

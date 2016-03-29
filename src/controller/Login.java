@@ -28,7 +28,7 @@ public class Login extends HttpServlet {
                 System.out.println("Validated");
                 try {
                     Class.forName("oracle.jdbc.driver.OracleDriver");
-                    Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
+                    Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "HR", "HR");
                     PreparedStatement statement = connection.prepareStatement("SELECT * FROM USERS WHERE USERNAME = ?");
                     statement.setString(1, request.getParameter("username"));
                     ResultSet resultSet = statement.executeQuery();

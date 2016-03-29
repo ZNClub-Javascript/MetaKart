@@ -13,6 +13,7 @@
           <element id="library" level="project" name="mail" />
           <element id="library" level="project" name="json" />
           <element id="library" level="project" name="jstl-1.2" />
+          <element id="file-copy" path="$PROJECT_DIR$/jstl-1.2.jar" />
         </element>
       </element>
     </root>

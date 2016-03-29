@@ -19,7 +19,7 @@ public class Search extends HttpServlet {
         String q = request.getParameter("q");
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
+            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "HR", "HR");
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM PRODUCTS WHERE NAME LIKE '%"+q+"%' OR CATEGORY LIKE '%"+q+"%'");
             JSONObject ret = new JSONObject();
             JSONArray res = new JSONArray();

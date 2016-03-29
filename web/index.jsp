@@ -90,7 +90,7 @@
     <div class="ui centered fluid cards">
         <sql:setDataSource var="snapshot" driver="oracle.jdbc.driver.OracleDriver"
                            url="jdbc:oracle:thin:@//localhost:1521"
-                           user="hr"  password="hr"/>
+                           user="HR"  password="HR"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * FROM PRODUCTS

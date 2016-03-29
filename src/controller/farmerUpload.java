@@ -17,7 +17,7 @@ public class farmerUpload extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "hr", "hr");
+            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521", "HR", "HR");
             PreparedStatement statement = connection.prepareStatement("INSERT INTO PRODUCTS VALUES (?,?,?,?,?,?,?)");
             Random random = new Random();
             statement.setInt(1, Math.abs(random.nextInt()));
