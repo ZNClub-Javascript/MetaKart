@@ -14,7 +14,7 @@
 
         body {
             background-size: cover;
-            background: #8BC34A linear-gradient(to bottom, rgba(34, 34, 34, 1), rgba(255, 255, 255, 0) 10%) no-repeat;
+            background: #BF360C linear-gradient(to bottom, rgba(34, 34, 34, 1), rgba(255, 255, 255, 0) 10%) no-repeat;
         }
 
         .indigo {
@@ -29,7 +29,7 @@
         .offer {
             position: relative;
             top: 0;
-            background: url(img/vegetables.jpg) fixed no-repeat;
+            background: url(img/OnlineShopping1.jpg) fixed no-repeat;
             background-size: cover;
             height: 100%;
             overflow: hidden;
@@ -42,7 +42,7 @@
             right: 0;
             font-family: 'Roboto Slab', serif;
             font-weight: 700;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(55, 71, 79, 1);
             font-size: 74pt;
             line-height: 20vh;
             text-align: right;

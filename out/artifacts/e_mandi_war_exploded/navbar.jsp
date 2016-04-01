@@ -62,8 +62,8 @@
         <a class="ui button" href="/cart.jsp">Proceed</a>
     </div>
 </div>
-<div class="ui fixed sticky secondary inverted menu" style="background-color: #7CB342; padding: 5px; height: 7%">
-    <a class="active item">Home</a>
+<div class="ui fixed sticky secondary inverted menu" style="background-color: #D84315; padding: 5px; height: 7%">
+    <a class="active item" href="/index.jsp">Home</a>
 
     <div class="item">
         <div class="ui search">

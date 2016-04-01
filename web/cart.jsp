@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="semantic-ui/semantic.css">
     <style>
         body {
-            background: url(img/vegetables.jpg) fixed no-repeat;
+            background: url(img/OnlineShopping1.jpg) fixed no-repeat;
+            background-size: cover;
         }
     </style>
     <script src="jquery.js"></script>

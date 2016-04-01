@@ -14,7 +14,8 @@
     <script src="semantic-ui/semantic.min.js"></script>
     <style>
         body {
-            background: url(img/vegetables.jpg) fixed no-repeat;
+            background: url(img/OnlineShopping1.jpg) fixed no-repeat;
+            background-size: cover;
         }
 
         .middle.center {
