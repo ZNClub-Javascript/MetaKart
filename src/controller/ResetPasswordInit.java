@@ -27,11 +27,12 @@ public class ResetPasswordInit extends HttpServlet {
             if (resultSet.next()) {
 
                 int vcode = resultSet.getInt("VCODE");
+                System.out.println("Reset Password " + vcode);
                 // Recipient's email ID needs to be mentioned.
                 String to = request.getParameter("email");
 
                 // Sender's email ID needs to be mentioned
-                String from = "f.warren210@gmail.com";
+                String from = "emandi74@gmail.com";
 
                 Properties props = new Properties();
                 props.put("mail.smtp.auth", "true");

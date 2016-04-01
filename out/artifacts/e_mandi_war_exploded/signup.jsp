@@ -78,7 +78,7 @@
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="email" placeholder="E-mail address">
+                        <input id="emailid" type="text" name="email" placeholder="E-mail address">
                     </div>
                 </div>
                 <div class="field">
@@ -110,8 +110,8 @@
 
         </form>
 
-        <div class="ui message">
-            Forgot your password? <a href="/resetInit?email=${param['username']}">Reset it here!</a>
+        <div class="ui message button" onclick="window.location.href='/resetInit?email='+$('#emailid').val()">
+            Forgot your password? Reset it here!</a>
         </div>
     </div>
 </div>

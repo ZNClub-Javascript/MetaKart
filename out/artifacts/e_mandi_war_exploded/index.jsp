@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html ng-app>
+<html ng-app="cartApp">
 <head>
     <title>FarmFresh</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -90,7 +90,7 @@
     <div class="ui centered fluid cards">
         <sql:setDataSource var="snapshot" driver="oracle.jdbc.driver.OracleDriver"
                            url="jdbc:oracle:thin:@//localhost:1521"
-                           user="hr"  password="hr"/>
+                           user="HR"  password="HR"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * FROM PRODUCTS

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html ng-app>
+<html ng-app="cartApp">
 <head>
     <title>FarmFresh</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
