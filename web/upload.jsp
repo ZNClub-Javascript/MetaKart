@@ -84,6 +84,7 @@
     </script>
 </head>
 <body>
+<%@ include file="navbar.jsp" %>
 <div class="ui center aligned grid">
     <div class="four wide column">
         <h2 class="ui teal image header">

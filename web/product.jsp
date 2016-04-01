@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="semantic-ui/semantic.css">
 </head>
 <body>
+<%@ include file="navbar.jsp" %>
 <div class="ui container">
     <div class="ui segment">
         <div class="ui two column centered grid">
