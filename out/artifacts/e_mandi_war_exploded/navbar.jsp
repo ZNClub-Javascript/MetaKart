@@ -118,6 +118,9 @@
             <div class="ui inverted popup">
                 <div class="ui inverted vertical menu">
                     <a id="upload" href="/upload.jsp" class="item">Add a vegetable<i class="blue upload icon"></i></a>
+                    <a id="edit" href="/edit.jsp" class="item">Edit Item Details<i class="shift-icon"></i></a>
+                    <a id="delete" href="/delete.jsp" class="item">Delete Items<i class="shift-icon"></i></a>
+                    <a id="delete" href="/paymentDetails.jsp" class="item">View Payment details<i class="shift-icon"></i></a>
                     <a href="/logout" class="item">Log out<i class="green sign out icon"></i></a>
                 </div>
             </div>

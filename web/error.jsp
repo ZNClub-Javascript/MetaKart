@@ -15,6 +15,8 @@
     <style>
         body {
             background: url(img/OnlineShopping1.jpg) fixed no-repeat;
+            background-size: cover;
+            height: 100%;
         }
 
         .middle.center {
@@ -36,7 +38,10 @@
                                         type   : 'empty',
                                         prompt : 'Please enter an image link'
                                     },
-
+                                    {
+                                        type   : 'url',
+                                        prompt : 'Please valid url'
+                                    }
                                 ]
                             },
                             name: {
@@ -88,56 +93,12 @@
             <img src="img/favicon.png" class="image">
 
             <div class="content">
-                Everyone forgets things!
+                Something is wrong buddy. :(
             </div>
         </h2>
-        <form id="form" class="ui large form" method="post" action="/up">
-            <div class="ui stacked segment">
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="user icon"></i>
-                        <input type="text" name="name" placeholder="Name">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="edit icon"></i>
-                        <input type="text" name="description" placeholder="Description">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="filter icon"></i>
-                        <input type="text" name="category" placeholder="Category">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="picture icon"></i>
-                        <input type="url" name="image" placeholder="Image">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="money icon"></i>
-                        <input type="number" name="price" placeholder="Price">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="cubes icon"></i>
-                        <input type="number" name="stock" placeholder="Stock">
-                    </div>
-                </div>
-                <input type="submit" class="ui fluid large teal submit button" value="Upload"/>
-            </div>
-
-            <div class="ui error message"></div>
-
-        </form>
 
         <div class="ui message">
-            Almost done!
+            <a href="index.jsp">Go back to Home Page</a>
         </div>
     </div>
 </div>

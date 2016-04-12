@@ -1,0 +1,149 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 13/04/2016
+  Time: 01:35
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Payment Details</title>
+    <%@ page import="java.sql.*" %>
+        <%@ page import="model.User" %>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+        <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+        <html ng-app="cartApp">
+        <head>
+            <title>FarmFresh</title>
+            <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+            <link rel="stylesheet" href="semantic-ui/semantic.css">
+            <link rel="stylesheet" href="semantic-ui/transition.min.css">
+            <link rel="stylesheet" href="semantic-ui/dimmer.min.css">
+            <style>
+                @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
+
+                body {
+                    background-size: cover;
+                    background: #BF360C linear-gradient(to bottom, rgba(34, 34, 34, 1), rgba(255, 255, 255, 0) 10%) no-repeat;
+                }
+
+                .indigo {
+                    background-color: #3F51B5;
+                }
+
+                #main {
+                    position: relative;
+                    margin-top: 20px;
+                }
+
+                .offer {
+                    position: relative;
+                    top: 0;
+                    background: url(img/OnlineShopping1.jpg) fixed no-repeat;
+                    background-size: cover;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .offer .content {
+                    width: 75%;
+                    position: absolute;
+                    top: 25%;
+                    right: 0;
+                    font-family: 'Roboto Slab', serif;
+                    font-weight: 700;
+                    color: rgba(55, 71, 79, 1);
+                    font-size: 74pt;
+                    line-height: 20vh;
+                    text-align: right;
+                }
+            </style>
+            <script src="jquery.js"></script>
+            <script src="semantic-ui/semantic.min.js"></script>
+            <script src="semantic-ui/transition.min.js"></script>
+            <script src="semantic-ui/dimmer.min.js"></script>
+            <script src="angular.min.js"></script>
+            <script src="cart.js"></script>
+            <script>
+                $(function () {
+                    var scroll;
+                    $(window).on('scroll', function () {
+                        scroll = $(window).scrollTop();
+                        $('.offer .content').css("transform", "translateY(" + scroll / 2 + "px)");
+                    });
+                    $('.ui.rating')
+                            .rating()
+                    ;
+                    //$('#main').visibility({
+                    //    onTopVisible: function(calculations) {
+                    //     window.scrollTo(0, $('#main').offset().top);
+                    // }});
+                    $('#mycart' +
+                            '').click(function () {
+                        $('#modaldiv').modal('show');
+                    });
+                });
+
+
+            </script>
+
+        </head>
+<body>
+<%@ include file="navbar.jsp" %>
+
+<div class="offer">
+    <% for (int i = 0; i < 2; i++) { %>
+    <div class="content">The best deals on the freshest vegetables are back!</div>
+    <%}%>
+</div>
+<div id="main" class="ui grid container" ng-controller="CartRefreshController">
+    <div class="ui centered fluid cards">
+        <sql:setDataSource var="snapshot" driver="oracle.jdbc.driver.OracleDriver"
+                           url="jdbc:oracle:thin:@//localhost:1521"
+                           user="HR"  password="HR"/>
+
+        <sql:query dataSource="${snapshot}" var="result">
+            SELECT * FROM PAYMENTS
+        </sql:query>
+
+        <c:forEach var="row" items="${result.rows}">
+
+            <div class="ui card">
+                <div class="content">
+                    <%
+                        User u = (User) session.getAttribute("user");
+                        if( u!= null && (u.getType()==1)){
+                    %>
+                    <div class="meta">
+                        <span class="date">Payment ID:${row.id}</span>
+                    </div>
+                    <% } %>
+                    <a class="header">${row.pid}</a>
+
+                    <div class="meta">
+                        <span class="date">${row.email}</span>
+                    </div>
+                    <div class="meta" data-max-rating="5" data-rating="3"></div>
+                    <div class="left floated meta">
+                        ${row.card}
+                    </div>
+
+                </div>
+                
+            </div>
+        </c:forEach>
+
+    </div>
+</div>
+
+<%@include file="footer.jsp" %>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>

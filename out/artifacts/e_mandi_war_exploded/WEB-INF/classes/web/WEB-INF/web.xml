@@ -84,7 +84,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>checkoutcontroller</servlet-name>
-        <servlet-class>controller.CheckOutController</servlet-class>
+        <servlet-class>controller.CheckOutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>checkoutcontroller</servlet-name>
@@ -105,5 +105,29 @@
     <servlet-mapping>
         <servlet-name>upload</servlet-name>
         <url-pattern>/up</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Edit</servlet-name>
+        <servlet-class>controller.editServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Edit</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Payment</servlet-name>
+        <servlet-class>controller.paymentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Payment</servlet-name>
+        <url-pattern>/payment</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Delete</servlet-name>
+        <servlet-class>controller.deleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Delete</servlet-name>
+        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
 </web-app>

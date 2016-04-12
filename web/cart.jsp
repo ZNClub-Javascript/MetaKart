@@ -73,15 +73,15 @@
                 </div>
             </div>
             <div class="column">
-                <form class="ui form segment" action="/checkout" method="post">
+                <form class="ui form segment" action="/payment" method="post">
                     <div class="two fields">
                         <div class="field">
                             <label>Credit Card</label>
-                            <input name="card" type="text" placeholder="16-digit number">
+                            <input name="card" type="number" placeholder="16-digit number">
                         </div>
                         <div class="field">
                             <label>CVV</label>
-                            <input name="cvv" type="text" placeholder="3-digit CVV">
+                            <input name="cvv" type="number" placeholder="3-digit CVV">
                         </div>
                     </div>
                     <div class="inline fields">
@@ -89,7 +89,7 @@
                         <div class="field">
                             <div class="ui radio checkbox">
                                 <input type="radio" name="user-type" value="1">
-                                <label>Cash On Delivery</label>
+                                <label>Debit Card</label>
                             </div>
                         </div>
                         <div class="field">

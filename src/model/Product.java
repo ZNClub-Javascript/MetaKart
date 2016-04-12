@@ -6,7 +6,15 @@ package model;
 public class Product {
     private float price;
     private String name,description,image,category;
-    private int stock;
+    private int stock, id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public float getPrice() {
         return price;
