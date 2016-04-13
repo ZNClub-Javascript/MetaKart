@@ -25,7 +25,19 @@
                 });
         $('#mycart' +
                 '').click(function () {
-            var s = $.getJSON('/getCart');
+            $.getJSON('/getCart', function (data) {
+                console.log(data);
+                if (data.length > 0) {
+                    $('#proceed').removeClass("disabled");
+                    $('#cartList').find('div.item').detach();
+                    $.each(data, function (k, v) {
+                        $('#cartList').append('<div class="item"><div class="content"><div class="description">' + v.name + '</div></div></div>');
+                    });
+                }
+                else{
+                    $('#proceed').addClass("disabled");
+                }
+            });
             $('#modaldiv').modal('show');
         });
     })
@@ -47,6 +59,9 @@
                 <div class="ui header">My Cart</div>
             </div>
 
+            <div class="ui fluid relaxed divided list" id="cartList">
+
+            </div>
             <!--
                             <div ng-controller="CartRefreshController as cart">
                                 <div ng-repeat="item in cartData">
@@ -65,7 +80,7 @@
     </div>
     <div class="actions">
         <div class="ui deny button">Later</div>
-        <a class="ui button" href="/cart.jsp">Proceed</a>
+        <a class="ui button" id="proceed" href="/cart.jsp">Proceed</a>
     </div>
 </div>
 <div class="ui fixed sticky secondary inverted menu" style="background-color: #D84315; padding: 5px; height: 7%">
@@ -88,7 +103,7 @@
     <div class="right menu">
         <div class="item">
             <% if ((User) session.getAttribute("user") == null) {%>
-            <a id="logIn" class="ui button" style="background: #9CCC65">log in</a>
+            <a id="logIn" class="ui button" style="background: #EF6C00">log in</a>
 
             <div class="ui popup">
                 <form class="ui form" method="post" action="${pageContext.request.contextPath}login">
@@ -108,7 +123,7 @@
                     </div>
                     <div class="field">
                         <input type="submit" class="ui bottom attached button" tabindex="0"
-                               style="background: #9CCC65" value="Log in / Sign Up"/>
+                               style="background: #EF6C00" value="Log in / Sign Up"/>
                     </div>
                 </form>
             </div>
@@ -117,8 +132,8 @@
             </div>
             <div class="ui inverted popup">
                 <div class="ui inverted vertical menu">
-                    <a id="mycart" class="item">My Cart<i class="blue cart icon"></i></a>
-                    <a href="/logout" class="item">Log out<i class="green sign out icon"></i></a>
+                    <a id="mycart" class="item">My Cart<i class="cart icon"></i></a>
+                    <a href="/logout" class="item">Log out<i class="red sign out icon"></i></a>
                 </div>
             </div>
             <%} else if (((User) session.getAttribute("user")).getType() == 1) {%>
@@ -126,11 +141,11 @@
             </div>
             <div class="ui inverted popup">
                 <div class="ui inverted vertical menu">
-                    <a id="upload" href="/upload.jsp" class="item">Add a vegetable<i class="blue upload icon"></i></a>
-                    <a id="edit" href="/edit.jsp" class="item">Edit Item Details<i class="shift-icon"></i></a>
-                    <a id="delete" href="/delete.jsp" class="item">Delete Items<i class="shift-icon"></i></a>
-                    <a id="delete" href="/paymentDetails.jsp" class="item">View Payment details<i class="shift-icon"></i></a>
-                    <a href="/logout" class="item">Log out<i class="green sign out icon"></i></a>
+                    <a id="upload" href="/upload.jsp" class="item">Add a vegetable<i class="upload icon"></i></a>
+                    <a id="edit" href="/edit.jsp" class="item">Edit Item Details<i class="edit icon"></i></a>
+                    <a id="delete" href="/delete.jsp" class="item">Delete Items<i class="delete icon"></i></a>
+                    <a id="view" href="/paymentDetails.jsp" class="item">View Payment details<i class="unhide icon"></i></a>
+                    <a href="/logout" class="item">Log out<i class="red sign out icon"></i></a>
                 </div>
             </div>
             <%}%>

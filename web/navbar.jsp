@@ -25,12 +25,18 @@
                 });
         $('#mycart' +
                 '').click(function () {
-            $.getJSON('/getCart',function(data){
+            $.getJSON('/getCart', function (data) {
                 console.log(data);
-                $('#cartList').find('div.item').detach();
-                $.each(data, function (k, v) {
-                    $('#cartList').append('<div class="item"><div class="content"><div class="description">' + v.name + '</div></div></div>');
-                });
+                if (data.length > 0) {
+                    $('#proceed').removeClass("disabled");
+                    $('#cartList').find('div.item').detach();
+                    $.each(data, function (k, v) {
+                        $('#cartList').append('<div class="item"><div class="content"><div class="description">' + v.name + '</div></div></div>');
+                    });
+                }
+                else{
+                    $('#proceed').addClass("disabled");
+                }
             });
             $('#modaldiv').modal('show');
         });
@@ -74,7 +80,7 @@
     </div>
     <div class="actions">
         <div class="ui deny button">Later</div>
-        <a class="ui button" href="/cart.jsp">Proceed</a>
+        <a class="ui button" id="proceed" href="/cart.jsp">Proceed</a>
     </div>
 </div>
 <div class="ui fixed sticky secondary inverted menu" style="background-color: #D84315; padding: 5px; height: 7%">
