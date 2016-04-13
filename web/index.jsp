@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html ng-app="cartApp">
+<html><!--ng-app="cartApp"-->
 <head>
     <title>MetaKart</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -85,7 +85,7 @@
     <div class="content">The best deals on the latest products are back!</div>
     <%}%>
 </div>
-<div id="main" class="ui grid container" ng-controller="CartRefreshController">
+<div id="main" class="ui grid container"><!--ng-controller="CartRefreshController"-->
     <div class="ui centered fluid cards">
         <sql:setDataSource var="snapshot" driver="oracle.jdbc.driver.OracleDriver"
                            url="jdbc:oracle:thin:@//localhost:1521"
