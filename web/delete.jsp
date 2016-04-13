@@ -8,13 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Sign Up</title>
+    <title>Delete Products</title>
     <link rel="stylesheet" href="semantic-ui/semantic.css">
     <script src="jquery.js"></script>
     <script src="semantic-ui/semantic.min.js"></script>
     <style>
         body {
             background: url(img/OnlineShopping1.jpg) fixed no-repeat;
+            background-size: cover;
+            height: 100%;
         }
 
         .middle.center {
@@ -84,61 +86,31 @@
 <%@ include file="navbar.jsp" %>
 <div class="ui center aligned grid">
     <div class="four wide column">
-        <h2 class="ui teal image header">
-            <img src="img/favicon.png" class="image">
+        <center>
+            <h2 class="ui teal image header">
+                <img src="img/story_carrots.png" class="image">
 
-            <div class="content">
-                Everyone forgets things!
-            </div>
-        </h2>
-        <form id="form" class="ui large form" method="post" action="/up">
+                <div class="content">
+                    Delete Products
+                </div>
+            </h2>
+        </center>
+        <form id="form" class="ui large form" method="post" action="/delete">
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="name" placeholder="Name">
+                        <input type="text" name="id" placeholder="Enter Product ID">
                     </div>
                 </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="edit icon"></i>
-                        <input type="text" name="description" placeholder="Description">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="filter icon"></i>
-                        <input type="text" name="category" placeholder="Category">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="picture icon"></i>
-                        <input type="url" name="image" placeholder="Image">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="money icon"></i>
-                        <input type="number" name="price" placeholder="Price">
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui left icon input">
-                        <i class="cubes icon"></i>
-                        <input type="number" name="stock" placeholder="Stock">
-                    </div>
-                </div>
-                <input type="submit" class="ui fluid large teal submit button" value="Upload"/>
+
+                <input type="submit" class="ui fluid large teal submit button" value="Delete"/>
             </div>
 
             <div class="ui error message"></div>
 
         </form>
 
-        <div class="ui message">
-            Almost done!
-        </div>
     </div>
 </div>
 </body>

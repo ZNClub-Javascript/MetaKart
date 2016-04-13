@@ -1,4 +1,5 @@
 <%@ page import="java.sql.*" %>
+<%@ page import="model.User" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -97,6 +98,14 @@
         <div class="ui card">
                 <img class="ui medium image" src="${row.image}">
             <div class="content">
+                <%
+                    User u = (User) session.getAttribute("user");
+                    if( u!= null && (u.getType()==1)){
+                %>
+                        <div class="meta">
+                        <span class="date">${row.id}</span>
+                        </div>
+                <% } %>
                 <a class="header">${row.name}</a>
 
                 <div class="meta">
