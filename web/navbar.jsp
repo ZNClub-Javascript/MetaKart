@@ -69,7 +69,7 @@
     </div>
 </div>
 <div class="ui fixed sticky secondary inverted menu" style="background-color: #D84315; padding: 5px; height: 7%">
-    <a class="active item" href="/index.jsp">Home</a>
+    <a class="active item" id="home" href="/index.jsp">Home</a>
 
     <div class="item">
         <div class="ui search">
@@ -80,6 +80,10 @@
             <div class="results"></div>
         </div>
     </div>
+    <a class="item" id="elex" href="/electronics.jsp">Electronics</a>
+    <a class="item" id="books" href="/books.jsp">Books</a>
+    <a class="item" id="fashion" href="/fashion.jsp">Fashion</a>
+    <a class="item" id="games" href="/games.jsp">Games</a>
 
     <div class="right menu">
         <div class="item">

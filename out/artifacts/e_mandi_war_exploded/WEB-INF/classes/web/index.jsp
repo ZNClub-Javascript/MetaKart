@@ -1,3 +1,4 @@
+<%@ page import="java.sql.*" %>
 <%@ page import="model.User" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
@@ -68,13 +69,8 @@
             //    onTopVisible: function(calculations) {
             //     window.scrollTo(0, $('#main').offset().top);
             // }});
-            $('#mycart' +
-                    '').click(function () {
-                $('#modaldiv').modal('show');
-            });
-            $('.ui.dropdown')
-                    .dropdown()
-            ;
+            $('a.item').removeClass('active');
+            $('#home').addClass('active');
         });
 
 
@@ -90,21 +86,10 @@
     <%}%>
 </div>
 <div id="main" class="ui grid container" ng-controller="CartRefreshController">
-    <div class="ui fluid search selection dropdown">
-        <input type="hidden" name="country">
-        <i class="dropdown icon"></i>
-        <div class="default text">Select Country</div>
-        <div class="menu">
-            <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
-            <div class="item" data-value="ax"><i class="ax flag"></i>Aland Islands</div>
-            <div class="item" data-value="al"><i class="al flag"></i>Albania</div>
-            <div class="item" data-value="dz"><i class="dz flag"></i>Algeria</div>
-        </div>
-    </div>
     <div class="ui centered fluid cards">
         <sql:setDataSource var="snapshot" driver="oracle.jdbc.driver.OracleDriver"
                            url="jdbc:oracle:thin:@//localhost:1521"
-                           user="HR" password="HR"/>
+                           user="HR"  password="HR"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * FROM PRODUCTS
@@ -112,7 +97,7 @@
 
         <c:forEach var="row" items="${result.rows}">
 
-            <div class="ui card">
+        <div class="ui card">
                 <img class="ui medium image" src="${row.image}">
             <div class="content">
                 <%
@@ -125,22 +110,21 @@
                 <% } %>
                 <a class="header">${row.name}</a>
 
-                    <div class="meta">
-                        <span class="date">${row.description}</span>
-                    </div>
-                    <div class="ui mini star rating" data-max-rating="5" data-rating="3"></div>
-                    <div class="left floated meta">
-                        Rs. ${row.price}/kg
-                    </div>
-                    <div class="right floated meta">
-                            ${row.stock} Items
-                    </div>
+                <div class="meta">
+                    <span class="date">${row.description}</span>
                 </div>
-                <div id="${row.id}" class="ui basic blue bottom attached button"
-                     onclick="$.ajax('/cart?vid='+'${row.id}');$('#'+'${row.id}').removeClass('basic');">
-                    +Add to cart
+                <div class="ui mini star rating" data-max-rating="5" data-rating="3"></div>
+                <div class="left floated meta">
+                    Rs. ${row.price}
+                </div>
+                <div class="right floated meta">
+                    ${row.stock} Items
                 </div>
             </div>
+                 <div id="${row.id}" class="ui basic blue bottom attached button" onclick="$.ajax('/cart?vid='+'${row.id}');$('#'+'${row.id}').removeClass('basic');">
+                    +Add to cart
+                </div>
+        </div>
         </c:forEach>
 
     </div>

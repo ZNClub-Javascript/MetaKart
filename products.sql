@@ -1,13 +1,4 @@
-CREATE TABLE PRODUCTS
-(
-    NAME VARCHAR2(4000) PRIMARY KEY NOT NULL,
-    DESCRIPTION VARCHAR2(4000),
-    PRICE INTEGER NOT NULL,
-    IMAGE VARCHAR2(4000),
-    STOCK INTEGER NOT NULL,
-    CATEGORY VARCHAR2(20) NOT NULL
-);
-
-INSERT INTO HR.PRODUCTS (NAME, DESCRIPTION, PRICE, IMAGE, STOCK, CATEGORY) VALUES ('Onions', 'Rich in vitamins', 55, 'img/onions.jpg', 230, 'vegetables');
-INSERT INTO HR.PRODUCTS (NAME, DESCRIPTION, PRICE, IMAGE, STOCK, CATEGORY) VALUES ('Tomatoes', 'Rich in Iron', 34, 'img/tomatoes.jpg', 180, 'fruit');
-
+INSERT INTO HR.PRODUCTS (ID, NAME, DESCRIPTION, PRICE, IMAGE, STOCK, CATEGORY) VALUES (131, 'Quicker Maths', 'Quicker Maths is a book written as a way to help the students who undertake various bank and civil examinations like the Union Public Service Commission (UPSC), the Staff Selection Commission (SSC), LIC, CPO, UTI, GIC', 173, 'img/products/maths.jpg', 45, 'books');
+INSERT INTO HR.PRODUCTS (ID, NAME, DESCRIPTION, PRICE, IMAGE, STOCK, CATEGORY) VALUES (132, 'Health, Safety and Environment Test : GT 200 2016', 'Latest Version of the test for managers and Professionals', 850, 'img/products/health.jpg', 45, 'books');
+INSERT INTO HR.PRODUCTS (ID, NAME, DESCRIPTION, PRICE, IMAGE, STOCK, CATEGORY) VALUES (133, 'A Brief History Of Time', 'This book marries a child''s wonder to a genius''s intellect. We journey into Hawking''s universe, while marvelling at his mind.', 320, 'img/products/history.jpg', 45, 'books');
+INSERT INTO HR.PRODUCTS (ID, NAME, DESCRIPTION, PRICE, IMAGE, STOCK, CATEGORY) VALUES (134, 'Cosmos', 'Cosmos is one of the bestselling science books of all time. In clear-eyed prose, Sagan reveals a jewel-like blue world inhabited by a life form that is just beginning to discover its own identity and to venture into the vast ocean of space', 340, 'img/products/cosmos.jpg', 45, 'books');

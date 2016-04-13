@@ -23,6 +23,11 @@
                     maxResults: 10,
                     cache: true
                 });
+        $('#mycart' +
+                '').click(function () {
+            var s = $.getJSON('/getCart');
+            $('#modaldiv').modal('show');
+        });
     })
 </script>
 <div id="modaldiv" class="ui modal">
@@ -39,22 +44,23 @@
 
         <div class="ui segment container">
             <div class="description">
-                <div class="ui header">My Veggies</div>
+                <div class="ui header">My Cart</div>
             </div>
 
-                <div ng-controller="CartRefreshController as cart">
-                    <div ng-repeat="item in cartData">
-                        <div class="ui fluid relaxed divided list">
-                            <div class="item">
-                                <div class="content">
-                                    <div class="description">{{item.name}}
+            <!--
+                            <div ng-controller="CartRefreshController as cart">
+                                <div ng-repeat="item in cartData">
+                                    <div class="ui fluid relaxed divided list">
+                                        <div class="item">
+                                            <div class="content">
+                                                <div class="description">{{item.name}}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
+            -->
         </div>
     </div>
     <div class="actions">
@@ -63,7 +69,7 @@
     </div>
 </div>
 <div class="ui fixed sticky secondary inverted menu" style="background-color: #D84315; padding: 5px; height: 7%">
-    <a class="active item" href="/index.jsp">Home</a>
+    <a class="active item" id="home" href="/index.jsp">Home</a>
 
     <div class="item">
         <div class="ui search">
@@ -74,6 +80,10 @@
             <div class="results"></div>
         </div>
     </div>
+    <a class="item" id="elex" href="/electronics.jsp">Electronics</a>
+    <a class="item" id="books" href="/books.jsp">Books</a>
+    <a class="item" id="fashion" href="/fashion.jsp">Fashion</a>
+    <a class="item" id="games" href="/games.jsp">Games</a>
 
     <div class="right menu">
         <div class="item">
@@ -102,7 +112,7 @@
                     </div>
                 </form>
             </div>
-            <% } else if(((User) session.getAttribute("user")).getType()==0) {%>
+            <% } else if (((User) session.getAttribute("user")).getType() == 0) {%>
             <div id="logOut" class="ui red label"><%=((User) session.getAttribute("user")).getUser()%>
             </div>
             <div class="ui inverted popup">
@@ -111,8 +121,7 @@
                     <a href="/logout" class="item">Log out<i class="green sign out icon"></i></a>
                 </div>
             </div>
-            <%}
-            else if(((User) session.getAttribute("user")).getType()==1) {%>
+            <%} else if (((User) session.getAttribute("user")).getType() == 1) {%>
             <div id="logOut" class="ui blue label"><%=((User) session.getAttribute("user")).getUser()%>
             </div>
             <div class="ui inverted popup">
