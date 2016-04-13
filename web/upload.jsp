@@ -15,6 +15,7 @@
     <style>
         body {
             background: url(img/OnlineShopping1.jpg) fixed no-repeat;
+            background-size: cover;
         }
 
         .middle.center {
@@ -82,13 +83,13 @@
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
-<div class="ui center aligned grid">
+<div class="ui center aligned grid" style="padding-top: 55px">
     <div class="four wide column">
         <h2 class="ui teal image header">
             <img src="img/favicon.png" class="image">
 
             <div class="content">
-                Everyone forgets things!
+                Add an Item
             </div>
         </h2>
         <form id="form" class="ui large form" method="post" action="/up">

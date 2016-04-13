@@ -68,12 +68,12 @@
                                     }
                                 ]
                             },
-                            category: {
+                            id: {
                                 identifier: 'category',
                                 rules: [
                                     {
                                         type   : 'empty',
-                                        prompt : 'Please enter a category for your product'
+                                        prompt : 'Please enter Product ID'
                                     }
                                 ]
                             }
@@ -88,7 +88,7 @@
     <div class="four wide column">
         <center>
         <h2 class="ui teal image header">
-            <img src="img/story_carrots.png" class="image">
+            <img src="img/favicon.png" class="image">
 
             <div class="content">
                 Edit Product Details

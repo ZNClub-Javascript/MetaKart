@@ -15,6 +15,7 @@
     <style>
         body {
             background: url(img/vegetables.jpg) fixed no-repeat;
+            background-size: cover;
         }
 
         .middle.center {
@@ -65,13 +66,13 @@
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
-<div class="ui center aligned grid">
+<div class="ui center aligned grid" style="padding-top: 55px">
     <div class="four wide column">
         <h2 class="ui teal image header">
-            <img src="img/story_carrots.png" class="image">
+            <img src="img/favicon.png.png" class="image">
 
             <div class="content">
-                Sign up for the freshest veggies!
+                Sign up for the hottest deals!
             </div>
         </h2>
         <form id="form" class="ui large form" method="post" action="/signUpController">

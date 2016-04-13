@@ -41,12 +41,12 @@
 
                                 ]
                             },
-                            name: {
-                                identifier: 'name',
+                            id: {
+                                identifier: 'id',
                                 rules: [
                                     {
                                         type   : 'empty',
-                                        prompt : 'Please enter a name for your product'
+                                        prompt : 'Please enter Product id'
                                     }
                                 ]
                             },
@@ -84,11 +84,11 @@
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
-<div class="ui center aligned grid">
+<div class="ui center aligned grid" style="padding-top: 55px">
     <div class="four wide column">
         <center>
             <h2 class="ui teal image header">
-                <img src="img/story_carrots.png" class="image">
+                <img src="img/favicon.png.png" class="image">
 
                 <div class="content">
                     Delete Products

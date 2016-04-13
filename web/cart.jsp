@@ -10,6 +10,9 @@
             background: url(img/OnlineShopping1.jpg) fixed no-repeat;
             background-size: cover;
         }
+        .ui.container{
+            padding-top: 55px;
+        }
     </style>
     <script src="jquery.js"></script>
     <script src="semantic-ui/semantic.min.js"></script>
@@ -44,7 +47,8 @@
     </script>
 </head>
 <body>
-<div class="ui container">
+<%@ include file="navbar.jsp" %>
+<div class="ui container" style="padding-top: 55px">
     <div class="ui segment">
         <div class="ui two column grid">
             <div class="column">
@@ -81,7 +85,7 @@
                         </div>
                         <div class="field">
                             <label>CVV</label>
-                            <input name="cvv" type="number" placeholder="3-digit CVV">
+                            <input name="cvv" type="password" placeholder="3-digit CVV">
                         </div>
                     </div>
                     <div class="inline fields">

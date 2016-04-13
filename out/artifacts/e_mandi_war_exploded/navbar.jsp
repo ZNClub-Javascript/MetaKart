@@ -50,7 +50,7 @@
     </div>
     <div class="image content">
         <div class="image">
-            <img height="300px" src="img/cart.jpg">
+            <img height="300px" src="img/cart-01.png">
 
         </div>
 

@@ -13,7 +13,7 @@
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
-<div class="ui container">
+<div class="ui container" style="padding-top: 55px">
     <div class="ui segment">
         <div class="ui two column centered grid">
             <div class="column">

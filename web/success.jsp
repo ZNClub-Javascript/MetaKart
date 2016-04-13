@@ -87,7 +87,7 @@
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
-<div class="ui center aligned grid">
+<div class="ui center aligned grid" style="padding-top: 55px">
     <div class="four wide column">
         <h2 class="ui teal image header">
             <img src="img/favicon.png" class="image">
