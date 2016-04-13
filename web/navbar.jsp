@@ -23,6 +23,11 @@
                     maxResults: 10,
                     cache: true
                 });
+        $('#mycart' +
+                '').click(function () {
+            var s = $.getJSON('/getCart');
+            $('#modaldiv').modal('show');
+        });
     })
 </script>
 <div id="modaldiv" class="ui modal">
@@ -39,22 +44,23 @@
 
         <div class="ui segment container">
             <div class="description">
-                <div class="ui header">My Veggies</div>
+                <div class="ui header">My Cart</div>
             </div>
 
-                <div ng-controller="CartRefreshController as cart">
-                    <div ng-repeat="item in cartData">
-                        <div class="ui fluid relaxed divided list">
-                            <div class="item">
-                                <div class="content">
-                                    <div class="description">{{item.name}}
+            <!--
+                            <div ng-controller="CartRefreshController as cart">
+                                <div ng-repeat="item in cartData">
+                                    <div class="ui fluid relaxed divided list">
+                                        <div class="item">
+                                            <div class="content">
+                                                <div class="description">{{item.name}}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
+            -->
         </div>
     </div>
     <div class="actions">
@@ -102,7 +108,7 @@
                     </div>
                 </form>
             </div>
-            <% } else if(((User) session.getAttribute("user")).getType()==0) {%>
+            <% } else if (((User) session.getAttribute("user")).getType() == 0) {%>
             <div id="logOut" class="ui red label"><%=((User) session.getAttribute("user")).getUser()%>
             </div>
             <div class="ui inverted popup">
@@ -111,13 +117,12 @@
                     <a href="/logout" class="item">Log out<i class="green sign out icon"></i></a>
                 </div>
             </div>
-            <%}
-            else if(((User) session.getAttribute("user")).getType()==1) {%>
+            <%} else if (((User) session.getAttribute("user")).getType() == 1) {%>
             <div id="logOut" class="ui blue label"><%=((User) session.getAttribute("user")).getUser()%>
             </div>
             <div class="ui inverted popup">
                 <div class="ui inverted vertical menu">
-                    <a id="upload" href="/upload.jsp" class="item">Add a vegetable<i class="blue upload icon"></i></a>
+                    <a id="upload" href="/upload.jsp" class="item">Add an item<i class="blue upload icon"></i></a>
                     <a href="/logout" class="item">Log out<i class="green sign out icon"></i></a>
                 </div>
             </div>

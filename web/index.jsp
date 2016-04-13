@@ -4,7 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html ng-app="cartApp">
 <head>
-    <title>FarmFresh</title>
+    <title>MetaKart</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
     <link rel="stylesheet" href="semantic-ui/semantic.css">
     <link rel="stylesheet" href="semantic-ui/transition.min.css">
@@ -68,10 +68,6 @@
             //    onTopVisible: function(calculations) {
             //     window.scrollTo(0, $('#main').offset().top);
             // }});
-            $('#mycart' +
-                    '').click(function () {
-                $('#modaldiv').modal('show');
-            });
         });
 
 
@@ -83,7 +79,7 @@
 
 <div class="offer">
     <% for (int i = 0; i < 2; i++) { %>
-    <div class="content">The best deals on the freshest vegetables are back!</div>
+    <div class="content">The best deals on the latest products are back!</div>
     <%}%>
 </div>
 <div id="main" class="ui grid container" ng-controller="CartRefreshController">
